@@ -1,0 +1,74 @@
+/// Unpivot 5 thang hài lòng/gắn kết (1-4)
+table Satisfaction_Long
+	lineageTag: 616cc2b7-f45a-52e0-bd75-1085b5924087
+
+	column EmployeeID
+		dataType: int64
+		formatString: 0
+		lineageTag: eabe6215-3b06-54b0-a750-967ecf9a7be7
+		summarizeBy: none
+		sourceColumn: EmployeeID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dimension_Code
+		dataType: string
+		isHidden
+		lineageTag: ddf7ab81-3e1c-5147-a838-41e8063dc94d
+		summarizeBy: none
+		sourceColumn: Dimension_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Score
+		dataType: int64
+		formatString: 0
+		lineageTag: ddb787a5-d9e1-5214-8698-d1fefef915a1
+		summarizeBy: none
+		sourceColumn: Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dimension
+		dataType: string
+		lineageTag: 2edce123-73d8-5bf1-8bbe-6240cc08d30b
+		summarizeBy: none
+		sourceColumn: Dimension
+		sortByColumn: Dimension_Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dimension_Sort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 22f2e7fa-a992-5af0-bd6a-a21a462f8ecb
+		summarizeBy: none
+		sourceColumn: Dimension_Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Score_Label
+		dataType: string
+		lineageTag: 392ef471-1eb0-5e72-944e-9f771dbab2ef
+		summarizeBy: none
+		sourceColumn: Score_Label
+		sortByColumn: Score
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Satisfaction_Long = m
+		mode: import
+		source =
+				let
+				    Source = Table.SelectColumns(Employees, {"EmployeeID", "EnvironmentSatisfaction", "JobSatisfaction", "RelationshipSatisfaction", "WorkLifeBalance", "JobInvolvement"}),
+				    Unpivoted = Table.UnpivotOtherColumns(Source, {"EmployeeID"}, "Dimension_Code", "Score"),
+				    Map = [EnvironmentSatisfaction = {"Môi trường", 1}, JobSatisfaction = {"Công việc", 2}, RelationshipSatisfaction = {"Quan hệ", 3}, WorkLifeBalance = {"Cân bằng CV-CS", 4}, JobInvolvement = {"Mức gắn kết", 5}],
+				    #"Added Dimension" = Table.AddColumn(Unpivoted, "Dimension", each Record.Field(Map, [Dimension_Code]){0}, type text),
+				    #"Added Dimension_Sort" = Table.AddColumn(#"Added Dimension", "Dimension_Sort", each Record.Field(Map, [Dimension_Code]){1}, Int64.Type),
+				    #"Added Score_Label" = Table.AddColumn(#"Added Dimension_Sort", "Score_Label", each Text.From([Score]) & " - " & {"Thấp", "Trung bình", "Cao", "Rất cao"}{[Score] - 1}, type text),
+				    Typed = Table.TransformColumnTypes(#"Added Score_Label", {{"EmployeeID", Int64.Type}, {"Dimension_Code", type text}, {"Score", Int64.Type}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

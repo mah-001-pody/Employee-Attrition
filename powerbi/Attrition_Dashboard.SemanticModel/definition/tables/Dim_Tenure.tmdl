@@ -1,0 +1,40 @@
+/// Dimension Tenure_Group
+table Dim_Tenure
+	lineageTag: 5c701a23-5388-50e4-83a0-2be076da6c55
+
+	column Tenure_Group
+		dataType: string
+		lineageTag: f39ad0e9-b059-585c-9a2f-082a80c8e61f
+		summarizeBy: none
+		sourceColumn: Tenure_Group
+		sortByColumn: Tenure_Group_Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tenure_Group_Sort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 47e788ba-2067-5c1a-9737-373362c9a19a
+		summarizeBy: none
+		sourceColumn: Tenure_Group_Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Tenure = m
+		mode: import
+		source =
+				let
+				    Source = #table(
+				        type table [Tenure_Group = text, Tenure_Group_Sort = Int64.Type],
+				        {
+				            {"0-1 năm", 1},
+				            {"2-5 năm", 2},
+				            {"6-10 năm", 3},
+				            {"11-20 năm", 4},
+				            {"20+ năm", 5}
+				        })
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

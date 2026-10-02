@@ -1,0 +1,19 @@
+relationship 16101b47-d820-5c73-8103-fd14be389a26
+	fromColumn: Employees.Department
+	toColumn: Dim_Department.Department
+
+relationship 2adb2bf8-ac8a-541f-865f-3d2041968937
+	fromColumn: Employees.Age_Group
+	toColumn: Dim_AgeGroup.Age_Group
+
+relationship eb53c710-6516-5d77-8281-76a32a9ffc48
+	fromColumn: Employees.Income_Band
+	toColumn: Dim_IncomeBand.Income_Band
+
+relationship 2cce8dac-6c38-5360-87bf-00b264d0dfbc
+	fromColumn: Employees.Tenure_Group
+	toColumn: Dim_Tenure.Tenure_Group
+
+relationship c279f74e-4235-579b-8184-9ccb9a304e92
+	fromColumn: Satisfaction_Long.EmployeeID
+	toColumn: Employees.EmployeeID

@@ -1,0 +1,120 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "f61e4afccadf372e41b0",
+  "position": {
+    "x": 796,
+    "y": 216,
+    "z": 2600,
+    "height": 250,
+    "width": 468,
+    "tabOrder": 2600
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Action_Plan"
+                    }
+                  },
+                  "Property": "Priority"
+                }
+              },
+              "queryRef": "Action_Plan.Priority",
+              "displayName": "#"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Action_Plan"
+                    }
+                  },
+                  "Property": "Lever"
+                }
+              },
+              "queryRef": "Action_Plan.Lever",
+              "displayName": "Đòn bẩy"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Action_Plan"
+                    }
+                  },
+                  "Property": "Target"
+                }
+              },
+              "queryRef": "Action_Plan.Target",
+              "displayName": "Nhóm mục tiêu"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Action_Plan"
+                    }
+                  },
+                  "Property": "Evidence"
+                }
+              },
+              "queryRef": "Action_Plan.Evidence",
+              "displayName": "Bằng chứng"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Action_Plan"
+                  }
+                },
+                "Property": "Priority"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Kế hoạch hành động ưu tiên'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

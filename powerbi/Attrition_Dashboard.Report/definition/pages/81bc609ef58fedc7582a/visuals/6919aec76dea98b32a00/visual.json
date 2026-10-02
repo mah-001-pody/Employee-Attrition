@@ -1,0 +1,176 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "6919aec76dea98b32a00",
+  "position": {
+    "x": 856,
+    "y": 384,
+    "z": 2400,
+    "height": 256,
+    "width": 408,
+    "tabOrder": 2400
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Employees"
+                    }
+                  },
+                  "Property": "Attrition_Label"
+                }
+              },
+              "queryRef": "Employees.Attrition_Label",
+              "displayName": "Nhóm"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Tổng nhân viên"
+                }
+              },
+              "queryRef": "_Measures.Tổng nhân viên",
+              "displayName": "Số NV"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Tuổi TB"
+                }
+              },
+              "queryRef": "_Measures.Tuổi TB",
+              "displayName": "Tuổi TB"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Thâm niên TB (năm)"
+                }
+              },
+              "queryRef": "_Measures.Thâm niên TB (năm)",
+              "displayName": "Thâm niên"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Thu nhập trung vị"
+                }
+              },
+              "queryRef": "_Measures.Thu nhập trung vị",
+              "displayName": "Lương TV"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "% Level 1"
+                }
+              },
+              "queryRef": "_Measures.% Level 1",
+              "displayName": "% Level 1"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "% làm thêm giờ"
+                }
+              },
+              "queryRef": "_Measures.% làm thêm giờ",
+              "displayName": "% OT"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "% độc thân"
+                }
+              },
+              "queryRef": "_Measures.% độc thân",
+              "displayName": "% độc thân"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Employees"
+                  }
+                },
+                "Property": "Attrition_Label"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'So sánh người nghỉ vs người ở lại'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

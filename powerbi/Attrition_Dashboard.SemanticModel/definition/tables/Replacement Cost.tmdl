@@ -1,0 +1,22 @@
+/// Tham số What-if: chi phí thay thế 1 nhân viên = % lương năm
+table 'Replacement Cost'
+	lineageTag: 98e82b98-e84a-5558-8b2f-2428db5ddb36
+
+	column 'Replacement Cost'
+		formatString: 0%
+		lineageTag: 3d398ebd-1330-5f22-b86c-49eb4117a390
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Replacement Cost' = calculated
+		mode: import
+		source = GENERATESERIES(0.25, 1.5, 0.25)
+
+	annotation PBI_Id = 3f19ca5a4f2749d28a37

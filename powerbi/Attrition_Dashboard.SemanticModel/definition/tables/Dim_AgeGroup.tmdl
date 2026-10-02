@@ -1,0 +1,40 @@
+/// Dimension Age_Group
+table Dim_AgeGroup
+	lineageTag: 3f9df2b0-13c5-5b4b-a6da-b83d09fc929e
+
+	column Age_Group
+		dataType: string
+		lineageTag: 9485d7be-be0d-58f3-9aa3-22bd146d54aa
+		summarizeBy: none
+		sourceColumn: Age_Group
+		sortByColumn: Age_Group_Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age_Group_Sort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7c63785c-e5c7-5762-bee0-0c07bfa2dbab
+		summarizeBy: none
+		sourceColumn: Age_Group_Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_AgeGroup = m
+		mode: import
+		source =
+				let
+				    Source = #table(
+				        type table [Age_Group = text, Age_Group_Sort = Int64.Type],
+				        {
+				            {"18-25", 1},
+				            {"26-35", 2},
+				            {"36-45", 3},
+				            {"46-55", 4},
+				            {"56-60", 5}
+				        })
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

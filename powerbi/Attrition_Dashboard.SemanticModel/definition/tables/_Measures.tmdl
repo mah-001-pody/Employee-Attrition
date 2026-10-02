@@ -1,0 +1,206 @@
+/// Bảng chứa toàn bộ measure DAX
+table _Measures
+	lineageTag: 5554809e-60ad-5a86-90c9-efc541c18320
+
+	measure 'Tổng nhân viên' = COUNTROWS(Employees)
+		formatString: #,##0
+		displayFolder: 1. Tổng quan
+		lineageTag: ea59bff9-1960-5688-b9c0-2e603d371eca
+
+	measure 'Số người nghỉ việc' = SUM(Employees[Attrition_Flag])
+		formatString: #,##0
+		displayFolder: 1. Tổng quan
+		lineageTag: ecf13e7b-507a-5d17-8616-013fe32288da
+
+	measure 'Số người ở lại' = [Tổng nhân viên] - [Số người nghỉ việc]
+		formatString: #,##0
+		displayFolder: 1. Tổng quan
+		lineageTag: 6c26cab0-b0bb-5bce-b2ce-2fb65b72f634
+
+	measure 'Tỷ lệ nghỉ việc' = DIVIDE([Số người nghỉ việc], [Tổng nhân viên])
+		formatString: 0.0%
+		displayFolder: 1. Tổng quan
+		lineageTag: 4cd204c0-97fb-57e2-9923-5592e8e33b63
+
+	measure 'Tỷ lệ nghỉ (mức chung)' = CALCULATE([Tỷ lệ nghỉ việc], ALLSELECTED(Employees))
+		formatString: 0.0%
+		displayFolder: 1. Tổng quan
+		lineageTag: fc876dfd-e275-59cc-9f26-d68f26c20956
+
+	measure 'Màu tỷ lệ nghỉ' = IF([Tỷ lệ nghỉ việc] > [Tỷ lệ nghỉ (mức chung)], "#D03B3B", "#C3C2B7")
+		formatString: General
+		displayFolder: 1. Tổng quan
+		lineageTag: 9c5310ea-c30d-55c5-bf61-fc7a0c00b846
+
+	measure 'Màu heatmap' =
+			VAR _r = [Tỷ lệ nghỉ việc]
+			RETURN
+			    SWITCH(TRUE(), ISBLANK(_r), BLANK(), _r >= 0.4, "#EE8F8F", _r >= 0.25, "#F6B3B3", _r >= 0.15, "#FAD4D4", "#F2F8F7")
+		formatString: General
+		displayFolder: 1. Tổng quan
+		lineageTag: 59d165e3-28b9-573a-b9a7-7974a1ed8e7b
+
+	measure '% nhân viên' = DIVIDE([Tổng nhân viên], CALCULATE([Tổng nhân viên], ALLSELECTED(Employees)))
+		formatString: 0.0%
+		displayFolder: 1. Tổng quan
+		lineageTag: 45e0d036-9961-5197-bdf9-b29bf432565b
+
+	measure '% số người nghỉ' = DIVIDE([Số người nghỉ việc], CALCULATE([Số người nghỉ việc], ALLSELECTED(Employees)))
+		formatString: 0.0%
+		displayFolder: 1. Tổng quan
+		lineageTag: 21990b30-457e-5128-b3a9-3a890fa24c7c
+
+	measure 'Thu nhập trung vị' = MEDIAN(Employees[MonthlyIncome])
+		formatString: #,##0
+		displayFolder: 1. Tổng quan
+		lineageTag: 3c2f590c-76e8-5bf8-8d50-91d536f907a4
+
+	measure 'Thu nhập TV người nghỉ' = CALCULATE([Thu nhập trung vị], Employees[Attrition_Flag] = 1)
+		formatString: #,##0
+		displayFolder: 1. Tổng quan
+		lineageTag: 89901e43-828b-5ad2-8cfe-fa67b9bf3043
+
+	measure 'Thu nhập TV người ở lại' = CALCULATE([Thu nhập trung vị], Employees[Attrition_Flag] = 0)
+		formatString: #,##0
+		displayFolder: 1. Tổng quan
+		lineageTag: 39dc06a2-32bf-58d4-abb3-95226a14c4ae
+
+	measure 'Tuổi TB' = AVERAGE(Employees[Age])
+		formatString: 0.0
+		displayFolder: 2. Chân dung
+		lineageTag: 1dde3842-beed-5dfb-8127-6481b768d51b
+
+	measure 'Thâm niên TB (năm)' = AVERAGE(Employees[YearsAtCompany])
+		formatString: 0.0
+		displayFolder: 2. Chân dung
+		lineageTag: e51d04c9-d8e2-5668-9860-2f5cba37807e
+
+	measure '% làm thêm giờ' = AVERAGE(Employees[OverTime_Flag])
+		formatString: 0.0%
+		displayFolder: 2. Chân dung
+		lineageTag: 29196ad9-720a-57a4-9b70-b9a90758d478
+
+	measure '% Level 1' = DIVIDE(CALCULATE([Tổng nhân viên], Employees[JobLevel] = 1), [Tổng nhân viên])
+		formatString: 0.0%
+		displayFolder: 2. Chân dung
+		lineageTag: f441c387-3700-533f-a95d-b43347d2122f
+
+	measure '% độc thân' = DIVIDE(CALCULATE([Tổng nhân viên], Employees[MaritalStatus] = "Single"), [Tổng nhân viên])
+		formatString: 0.0%
+		displayFolder: 2. Chân dung
+		lineageTag: c18456b9-64c8-5a4d-b4c0-8014dc752e97
+
+	measure '% có cổ phiếu' = DIVIDE(CALCULATE([Tổng nhân viên], Employees[StockOptionLevel] > 0), [Tổng nhân viên])
+		formatString: 0.0%
+		displayFolder: 4. Lương & đãi ngộ
+		lineageTag: c561c0e7-9291-565f-82cb-4d53269845ce
+
+	measure 'Tỷ lệ nghỉ (thang hài lòng)' = AVERAGEX(Satisfaction_Long, RELATED(Employees[Attrition_Flag]))
+		formatString: 0.0%
+		displayFolder: 5. Hài lòng
+		lineageTag: 69cba44a-4042-5bf0-af96-dc1e82a95731
+
+	measure 'Tổng lương năm người nghỉ' = CALCULATE(SUM(Employees[Annual_Income]), Employees[Attrition_Flag] = 1)
+		formatString: #,##0
+		displayFolder: 6. Hành động
+		lineageTag: 2f8644b4-1ff5-5f7a-ae6f-1e7720fcbac8
+
+	measure 'Tỷ lệ chi phí thay thế' = SELECTEDVALUE('Replacement Cost'[Replacement Cost], 0.5)
+		formatString: 0%
+		displayFolder: 6. Hành động
+		lineageTag: caa1df41-6c11-51c7-bc57-f4ca7b43ae6e
+
+	measure 'Chi phí thay thế ước tính' = [Tổng lương năm người nghỉ] * [Tỷ lệ chi phí thay thế]
+		formatString: #,##0
+		displayFolder: 6. Hành động
+		lineageTag: 906863b0-11d4-5f20-8ee7-45ac25c1e357
+
+	measure 'Ca nghỉ tránh được (giới hạn OT)' =
+			SUMX(
+			    VALUES(Employees[JobLevel]),
+			    VAR _noRate = CALCULATE([Tỷ lệ nghỉ việc], Employees[OverTime_Flag] = 0)
+			    VAR _n = CALCULATE([Tổng nhân viên], Employees[OverTime_Flag] = 1)
+			    VAR _left = CALCULATE([Số người nghỉ việc], Employees[OverTime_Flag] = 1)
+			    RETURN MAX(_left - _n * _noRate, 0)
+			)
+		formatString: #,##0
+		displayFolder: 6. Hành động
+		lineageTag: ddbb85c2-ce7a-5d10-9b48-e3e11a99c8c9
+
+	measure '% ca nghỉ tránh được' = DIVIDE([Ca nghỉ tránh được (giới hạn OT)], [Số người nghỉ việc])
+		formatString: 0.0%
+		displayFolder: 6. Hành động
+		lineageTag: 618efe1b-dfd3-51fc-91d2-f0b2ac209f17
+
+	measure 'Tỷ lệ nghỉ nếu giới hạn OT' = DIVIDE([Số người nghỉ việc] - [Ca nghỉ tránh được (giới hạn OT)], [Tổng nhân viên])
+		formatString: 0.0%
+		displayFolder: 6. Hành động
+		lineageTag: 61b1c55c-781d-5f0f-8ec2-3dd8589d5a54
+
+	measure 'Chi phí tiết kiệm được' =
+			[Ca nghỉ tránh được (giới hạn OT)]
+			    * DIVIDE([Tổng lương năm người nghỉ], [Số người nghỉ việc])
+			    * [Tỷ lệ chi phí thay thế]
+		formatString: #,##0
+		displayFolder: 6. Hành động
+		lineageTag: c996f720-d9e7-5909-9d85-39eb621c5b67
+
+	measure 'NV hiện tại rủi ro cao' = CALCULATE([Tổng nhân viên], Employees[Attrition_Flag] = 0, Employees[Risk_Flags] >= 4)
+		formatString: #,##0
+		displayFolder: 6. Hành động
+		lineageTag: f481a340-4b75-5be2-a4d7-322b84e5e5e9
+
+	measure 'NV hiện tại rủi ro trung bình' = CALCULATE([Tổng nhân viên], Employees[Attrition_Flag] = 0, Employees[Risk_Flags] >= 2, Employees[Risk_Flags] <= 3)
+		formatString: #,##0
+		displayFolder: 6. Hành động
+		lineageTag: 78ceefa3-0715-56ab-82d2-0e2ab564f207
+
+	measure 'Lương năm NV rủi ro cao' = CALCULATE(SUM(Employees[Annual_Income]), Employees[Attrition_Flag] = 0, Employees[Risk_Flags] >= 4)
+		formatString: #,##0
+		displayFolder: 6. Hành động
+		lineageTag: 8cbaa508-754c-5651-b7e3-2d28aad1bddd
+
+	measure 'Hệ số rủi ro' = SUM(Driver_Impact[Lift])
+		formatString: 0.00
+		displayFolder: 6. Hành động
+		lineageTag: 42811f82-20bd-59d3-948e-64fbc3ec5dfd
+
+	measure 'Số dòng gốc' = CALCULATE(MAX(Cleaning_Log[Rows_After]), Cleaning_Log[Step] = "R0")
+		formatString: #,##0
+		displayFolder: 7. Chất lượng dữ liệu
+		lineageTag: 3ce8cde5-4e44-5b58-8c60-255a5465d070
+
+	measure 'Số dòng sạch' = CALCULATE(MAX(Cleaning_Log[Rows_After]), Cleaning_Log[Step] = "R10")
+		formatString: #,##0
+		displayFolder: 7. Chất lượng dữ liệu
+		lineageTag: 68158538-4483-51e5-a589-f0a822c89e63
+
+	measure 'Số dòng bị xoá' = [Số dòng gốc] - [Số dòng sạch]
+		formatString: #,##0
+		displayFolder: 7. Chất lượng dữ liệu
+		lineageTag: 533711a8-a80b-57c1-8068-3958ec91a9bf
+
+	measure 'Số vấn đề chất lượng' = COUNTROWS(Quality_Flags)
+		formatString: #,##0
+		displayFolder: 7. Chất lượng dữ liệu
+		lineageTag: db02979c-9858-57f2-b641-3058c672bb29
+
+	column Dummy
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c583eabc-1bf5-5a5c-82a1-292860be7b41
+		summarizeBy: none
+		sourceColumn: Dummy
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = #table(type table [Dummy = Int64.Type], {{1}})
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

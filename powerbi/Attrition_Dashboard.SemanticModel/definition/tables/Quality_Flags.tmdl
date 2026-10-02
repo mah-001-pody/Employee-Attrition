@@ -1,0 +1,49 @@
+/// Các vấn đề chất lượng dữ liệu và cách xử lý
+table Quality_Flags
+	lineageTag: a2c8bc80-9503-5137-84a2-77c61ca529e6
+
+	column Issue
+		dataType: string
+		lineageTag: f548eb24-4c46-566f-8711-faf0adf22e6b
+		summarizeBy: none
+		sourceColumn: Issue
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rows
+		dataType: int64
+		formatString: #,##0
+		lineageTag: 8d27d36c-078f-5215-a5de-0d6890c40af6
+		summarizeBy: sum
+		sourceColumn: Rows
+
+		annotation SummarizationSetBy = Automatic
+
+	column Treatment
+		dataType: string
+		lineageTag: 50f9ab5a-c3db-5fed-ad5b-23632c32bfa0
+		summarizeBy: none
+		sourceColumn: Treatment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Flag_Order
+		dataType: int64
+		formatString: 0
+		lineageTag: 6271cc88-e26b-5966-a8bc-0791774a3cde
+		summarizeBy: none
+		sourceColumn: Flag_Order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Quality_Flags = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("XZFNaxsxEIb/yrBQSEGQOP0IKfRg3NL0k5AQSjDGyIqyGnZ3tGhlt770kkPpoQefS6Bu6KGQEofk0t1DDzL7P/afdGI7lPY2QqPnmVfT7UZvhlnHZrkk1MVb6xJ9BI9hA8jUM4pBhStIkAxQbLCpPmbgXT1rqi8qEq3tLRE9a8oLAtVUpwKOwi9+suvQuv7T97l2qEnp/qGWroh6ohs9kZiO96TX6zt26Fbla0veLGtITLhmRGLYkMPq5jkpm2n23d/aENHLZcvSNZ801QnkJnwj8OGnMpDWs3pK8UK3q92xdZnkIZiON3EY/Ak2IWuqH0pwlgVlxDYE7laa/L5MpRvvYPK/cT6pZ5KTlmdgJMIofLWQhWsw4ZzMwvfPvPABXtjBKz3SKay5mz8V2w/u3jI7PMhnghYMsCl/EyfGvzAwNkyXxKb87nkJHG/QlJc8BZlwRo+g7b1Dj5YYfKiLVbDWQ9G6E4nNe7yYfe848zHyPos8RS9ApbIo+u80xoZP80mYsirGML1l72kl03S9fdABb+SYI55DW6mhk2oc9Xp/AA==", BinaryEncoding.Base64), Compression.Deflate)), {"Issue", "Rows", "Treatment"}),
+				    Typed = Table.TransformColumnTypes(Source, {{"Issue", type text}, {"Rows", Int64.Type}, {"Treatment", type text}}),
+				    Result = Table.AddIndexColumn(Typed, "Flag_Order", 1, 1, Int64.Type)
+				in
+				    Result
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Attrition_Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e7980dbd-cd51-5e70-a2e9-27f597912a55"
+  }
+}

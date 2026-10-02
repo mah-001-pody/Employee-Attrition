@@ -1,0 +1,122 @@
+/// Bảng đòn bẩy: tỷ lệ nghỉ nhóm rủi ro vs nhóm còn lại (* = đã loại yếu tố gây nhiễu)
+table Driver_Impact
+	lineageTag: 5b3ea9d5-5d23-5ee5-8fba-9fd894281881
+
+	column Factor
+		dataType: string
+		lineageTag: d7f4fdec-b0ae-5726-8c4d-b9e59fdc1cae
+		summarizeBy: none
+		sourceColumn: Factor
+		sortByColumn: Factor_Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column Risk_Group_Label
+		dataType: string
+		lineageTag: e15b3fd6-c597-576e-9d63-2a40b6c507c7
+		summarizeBy: none
+		sourceColumn: Risk_Group_Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rate_Risk
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 8bac0008-f2e8-5a6d-9c0c-e1e58cc154f6
+		summarizeBy: sum
+		sourceColumn: Rate_Risk
+
+		annotation SummarizationSetBy = Automatic
+
+	column N_Risk
+		dataType: int64
+		formatString: #,##0
+		lineageTag: 8bc295a0-74c5-5fbe-a4d8-006b7726eb24
+		summarizeBy: sum
+		sourceColumn: N_Risk
+
+		annotation SummarizationSetBy = Automatic
+
+	column Base_Group_Label
+		dataType: string
+		lineageTag: 932f8a9c-60be-592a-a559-f7881af2df50
+		summarizeBy: none
+		sourceColumn: Base_Group_Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rate_Base
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 66d57287-c8a6-5424-abc3-762e14e3cad9
+		summarizeBy: sum
+		sourceColumn: Rate_Base
+
+		annotation SummarizationSetBy = Automatic
+
+	column Lift
+		dataType: double
+		formatString: 0.00
+		lineageTag: ac7a6b1a-1c66-5790-97db-200822c9af60
+		summarizeBy: sum
+		sourceColumn: Lift
+
+		annotation SummarizationSetBy = Automatic
+
+	column Controllable
+		dataType: string
+		lineageTag: a42e880b-6e6c-5466-a732-7b950bafaece
+		summarizeBy: none
+		sourceColumn: Controllable
+		sortByColumn: Controllable_Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Controllable_Sort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2c7c3dca-bf3b-5c68-b251-0b489f3c1f7d
+		summarizeBy: none
+		sourceColumn: Controllable_Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Factor_Rank
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f5b6da05-0c0c-5400-be94-fbe8fe5fdc1d
+		summarizeBy: none
+		sourceColumn: Factor_Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Driver_Impact = m
+		mode: import
+		source =
+				let
+				    Source = #table(
+				        type table [Factor = text, Risk_Group_Label = text, Rate_Risk = number, N_Risk = Int64.Type, Base_Group_Label = text, Rate_Base = number, Lift = number, Controllable = text, Controllable_Sort = Int64.Type, Factor_Rank = Int64.Type],
+				        {
+				            {"Làm thêm giờ", "Có", 0.3053, 416, "Không", 0.1044, 2.93, "Kiểm soát được", 1, 1},
+				            {"Thâm niên 0-1 năm", "0-1 năm", 0.3488, 215, ">1 năm", 0.1291, 2.7, "Không kiểm soát được", 3, 2},
+				            {"Cấp bậc Level 1", "Level 1", 0.2634, 543, "Level 2-5", 0.1014, 2.6, "Kiểm soát một phần", 2, 3},
+				            {"Tuổi 18-25", "18-25", 0.3577, 123, "26+", 0.1433, 2.5, "Không kiểm soát được", 3, 4},
+				            {"Thu nhập < 3K", "<3K", 0.2861, 395, "≥3K", 0.1153, 2.48, "Kiểm soát được", 1, 5},
+				            {"Gắn kết công việc = Low", "Low", 0.3373, 83, "Khác", 0.1507, 2.24, "Kiểm soát được", 1, 6},
+				            {"Độc thân", "Độc thân", 0.2553, 470, "Khác", 0.117, 2.18, "Không kiểm soát được", 3, 7},
+				            {"Không có cổ phiếu*", "Mức 0", 0.2112, 161, "Mức 1-3", 0.0989, 2.13, "Kiểm soát được", 1, 8},
+				            {"Cân bằng CV-CS = Bad", "Bad", 0.3125, 80, "Khác", 0.1525, 2.05, "Kiểm soát được", 1, 9},
+				            {"Vừa đổi quản lý*", "Vừa đổi", 0.2295, 61, "Ổn định", 0.124, 1.85, "Kiểm soát được", 1, 10},
+				            {"Môi trường = Low", "Low", 0.2535, 284, "Khác", 0.1391, 1.82, "Kiểm soát được", 1, 11},
+				            {"Đi công tác thường xuyên", "Thường xuyên", 0.2491, 277, "Ít/không", 0.1408, 1.77, "Kiểm soát được", 1, 12},
+				            {"Không được đào tạo", "0 lần", 0.2778, 54, "≥1 lần", 0.1568, 1.77, "Kiểm soát được", 1, 13},
+				            {"Nhà xa > 15 dặm", ">15", 0.2067, 329, "≤15", 0.1481, 1.4, "Không kiểm soát được", 3, 14},
+				            {"Trả thấp hơn cùng cấp", "<85%", 0.1777, 332, "≥85%", 0.1564, 1.14, "Kiểm soát được", 1, 15},
+				            {"≥5 năm chưa thăng chức", "≥5 năm", 0.1423, 260, "<5 năm", 0.1653, 0.86, "Kiểm soát một phần", 2, 16}
+				        })
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

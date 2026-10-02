@@ -1,0 +1,38 @@
+/// Dimension Department
+table Dim_Department
+	lineageTag: cbdbfac4-5842-5437-ad94-951e58e20b76
+
+	column Department
+		dataType: string
+		lineageTag: 7842c8c2-2ac0-5d03-b5b1-72fc778aab5f
+		summarizeBy: none
+		sourceColumn: Department
+		sortByColumn: Department_Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department_Sort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 30b6486d-c7be-5311-8f12-c7ad0c2969fa
+		summarizeBy: none
+		sourceColumn: Department_Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Department = m
+		mode: import
+		source =
+				let
+				    Source = #table(
+				        type table [Department = text, Department_Sort = Int64.Type],
+				        {
+				            {"Research & Development", 1},
+				            {"Sales", 2},
+				            {"Human Resources", 3}
+				        })
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
