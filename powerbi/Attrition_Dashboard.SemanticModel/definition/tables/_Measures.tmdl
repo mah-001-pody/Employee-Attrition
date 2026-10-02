@@ -27,7 +27,7 @@ table _Measures
 		displayFolder: 1. Tổng quan
 		lineageTag: fc876dfd-e275-59cc-9f26-d68f26c20956
 
-	measure 'Màu tỷ lệ nghỉ' = IF([Tỷ lệ nghỉ việc] > [Tỷ lệ nghỉ (mức chung)], "#D03B3B", "#C3C2B7")
+	measure 'Màu tỷ lệ nghỉ' = IF([Tỷ lệ nghỉ việc] > [Tỷ lệ nghỉ (mức chung)], "#E5484D", "#C3CAD8")
 		formatString: General
 		displayFolder: 1. Tổng quan
 		lineageTag: 9c5310ea-c30d-55c5-bf61-fc7a0c00b846
@@ -35,7 +35,7 @@ table _Measures
 	measure 'Màu heatmap' =
 			VAR _r = [Tỷ lệ nghỉ việc]
 			RETURN
-			    SWITCH(TRUE(), ISBLANK(_r), BLANK(), _r >= 0.4, "#EE8F8F", _r >= 0.25, "#F6B3B3", _r >= 0.15, "#FAD4D4", "#F2F8F7")
+			    SWITCH(TRUE(), ISBLANK(_r), BLANK(), _r >= 0.4, "#F3A0A3", _r >= 0.25, "#F7BDBF", _r >= 0.15, "#FBD9DA", "#F3F6FB")
 		formatString: General
 		displayFolder: 1. Tổng quan
 		lineageTag: 59d165e3-28b9-573a-b9a7-7974a1ed8e7b

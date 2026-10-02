@@ -77,3 +77,13 @@ Bảng độc lập: _Measures (34 measure) · Driver_Impact · Action_Plan · R
 python scripts/01_data_cleaning.py
 python scripts/02_build_pbip.py
 ```
+
+## 9. Bản 2 - theme "Navy & Coral" và căn chỉnh lại bố cục
+- **Theme mới:** dải tiêu đề xanh navy `#1B2A4A`, màu chính xanh chàm `#2E4A8C`, **đỏ san hô `#E5484D` = nghỉ việc / rủi ro**, xanh lục `#12A37A` = kết quả tốt, hổ phách `#C77700` = cảnh báo, nền trang xám xanh nhạt `#F1F4F9`. Ô "SO WHAT?" nền xanh nhạt, viền xanh chàm.
+- **Phông:** Segoe UI (hiển thị đủ dấu tiếng Việt). Tiêu đề visual và số KPI dùng Segoe UI Semibold.
+- **Hàng slicer** cao 54px (trước 44px), có lề trong và cách nội dung bên dưới 12px. Ô chú thích màu đổi thành "CÁCH ĐỌC MÀU" gọn trên 2 dòng.
+- **Lưới thống nhất:** lề 16px, khoảng cách 12px; 2 hàng biểu đồ cao bằng nhau (248px) trên trang 2-5.
+- **Trang 2:** bảng so sánh người nghỉ/ở lại (chỉ 2 dòng) đổi thành ma trận 7 chỉ số × 2 nhóm, lấp đầy khung.
+- **Trang 3 & 4:** các heatmap (Làm thêm giờ × Cấp bậc, × Thâm niên, Hôn nhân × Cổ phiếu) tự giãn ô cho kín khung, chữ 12pt, không còn khoảng trắng phía dưới.
+- **Trang 6:** sửa biểu đồ "Đòn bẩy" - loại visual cũ `stackedBarChart` không tồn tại trong Power BI, đổi thành `barChart` (biểu đồ thanh chồng).
+- **Trang 7:** ô "2 cái bẫy gây nhiễu" chữ lớn hơn (11-14pt), bảng vấn đề chất lượng cao hơn.

@@ -289,15 +289,17 @@ RELATIONSHIPS = [
     ("Satisfaction_Long", "EmployeeID", "Employees", "EmployeeID"),
 ]
 
-# Bảng màu (đã kiểm tra CVD/độ tương phản - xem scripts/pbip_assets/AttritionTheme.json)
-BAND, INK_ON_DARK, INK_ON_DARK_2 = "#0F5C55", "#FFFFFF", "#D3EFEB"
-INK, INK_2, MUTED = "#1F2328", "#52514E", "#898781"
-SURFACE, BORDER = "#FFFFFF", "#E3E5E8"
-BRAND, SERIES_1, CONTEXT, CONTEXT_2 = "#0F5C55", "#16867B", "#7CC7BD", "#D3EFEB"
-NEUTRAL, NEUTRAL_DARK = "#C3C2B7", "#898781"
-ACCENT, SOWHAT_BG = "#EB6834", "#FFF4EE"
-CRITICAL, CRITICAL_2, CRITICAL_3, GOOD, WARN = "#D03B3B", "#EE8F8F", "#FAD4D4", "#0CA30C", "#EDA100"
-M, W, G, TOP = 16, 1248, 12, 116
+# Bảng màu "Navy & Coral" - people analytics (xem scripts/pbip_assets/AttritionTheme.json)
+# Navy = khung/thương hiệu, xanh chàm = người ở lại/bối cảnh, đỏ san hô = nghỉ việc/rủi ro.
+BAND, INK_ON_DARK, INK_ON_DARK_2 = "#1B2A4A", "#FFFFFF", "#BFCBE6"
+INK, INK_2, MUTED = "#1A2233", "#4A5468", "#8691A6"
+SURFACE, BORDER = "#FFFFFF", "#DCE2EE"
+BRAND, SERIES_1, CONTEXT, CONTEXT_2 = "#2E4A8C", "#4A6FC4", "#9FB3DF", "#DDE5F5"
+NEUTRAL, NEUTRAL_DARK = "#C3CAD8", "#8691A6"
+ACCENT, SOWHAT_BG, SOWHAT_BORDER = "#C2412D", "#F0F4FC", "#9FB3DF"
+CRITICAL, CRITICAL_2, CRITICAL_3, GOOD, WARN = "#E5484D", "#F3A0A3", "#FBD9DA", "#12A37A", "#C77700"
+HEAT_MID, HEAT_LOW = "#F7BDBF", "#F3F6FB"
+M, W, G, TOP = 16, 1248, 12, 130
 
 # (tên, DAX, format, folder)
 F1, F2, F3, F4, F5, F6, F7 = ("1. Tổng quan", "2. Chân dung", "3. Công việc", "4. Lương & đãi ngộ",
@@ -314,8 +316,8 @@ MEASURE_LIST = [
     ("Màu heatmap", [
         "VAR _r = [Tỷ lệ nghỉ việc]",
         "RETURN",
-        f'    SWITCH(TRUE(), ISBLANK(_r), BLANK(), _r >= 0.4, "{CRITICAL_2}", _r >= 0.25, "#F6B3B3", '
-        f'_r >= 0.15, "{CRITICAL_3}", "#F2F8F7")'], "General", F1),
+        f'    SWITCH(TRUE(), ISBLANK(_r), BLANK(), _r >= 0.4, "{CRITICAL_2}", _r >= 0.25, "{HEAT_MID}", '
+        f'_r >= 0.15, "{CRITICAL_3}", "{HEAT_LOW}")'], "General", F1),
     ("% nhân viên", "DIVIDE([Tổng nhân viên], CALCULATE([Tổng nhân viên], ALLSELECTED(Employees)))", "0.0%", F1),
     ("% số người nghỉ", "DIVIDE([Số người nghỉ việc], CALCULATE([Số người nghỉ việc], ALLSELECTED(Employees)))",
      "0.0%", F1),
@@ -584,7 +586,7 @@ RATE = "m:Tỷ lệ nghỉ việc"
 
 class Page:
     """Lưới 1280x720: lề 16px, gutter 12px.
-    Dải tiêu đề (0-56) · hàng slicer (64-108) · nội dung (116-640) · ô SO WHAT (648-712)."""
+    Dải tiêu đề (0-56) · hàng slicer (64-118) · nội dung (130-638) · ô SO WHAT (650-712)."""
 
     SLICERS = [("Dim_Department.Department", "Phòng ban", "sync_dept"),
                ("Employees.JobLevel_Label", "Cấp bậc", "sync_level"),
@@ -595,24 +597,25 @@ class Page:
         self.key, self.name, self.display = key, hid("page/" + key), display
         self.visuals, self.z = [], 1000
         self.extra = {}
-        self.top = TOP if slicers else 64
+        self.top = TOP if slicers else 68
         self.textbox("header", 0, 0, 1280, 56, [
             [(title, {"fontSize": "16pt", "fontWeight": "bold", "color": INK_ON_DARK})],
-            [(subtitle, {"fontSize": "9pt", "color": INK_ON_DARK_2})]], bg=BAND, border=None)
+            [(subtitle, {"fontSize": "9pt", "color": INK_ON_DARK_2})]], bg=BAND, border=None, pad=M, vpad=3.0)
         if slicers:
             for i, (fld, disp, grp) in enumerate(self.SLICERS):
-                self.slicer(f"slicer_{grp}", M + i * 212, 64, 200, 44, fld, disp, grp)
-            self.textbox("legend_note", M + 4 * 212, 64, W - 4 * 212, 44, [
-                [("■ ", {"fontSize": "11pt", "color": CRITICAL}),
-                 ("Đỏ = tỷ lệ nghỉ cao hơn mức chung của vùng đang lọc   ", {"fontSize": "8pt", "color": INK_2}),
-                 ("■ ", {"fontSize": "11pt", "color": NEUTRAL}),
-                 ("Xám = thấp hơn", {"fontSize": "8pt", "color": INK_2})]])
+                self.slicer(f"slicer_{grp}", M + i * 212, 64, 200, 54, fld, disp, grp)
+            self.textbox("legend_note", M + 4 * 212, 64, W - 4 * 212, 54, [
+                [("CÁCH ĐỌC MÀU", {"fontSize": "8pt", "fontWeight": "bold", "color": INK_2})],
+                [("■ ", {"fontSize": "10pt", "color": CRITICAL}),
+                 ("Cao hơn tỷ lệ nghỉ chung   ", {"fontSize": "9pt", "color": INK}),
+                 ("■ ", {"fontSize": "10pt", "color": NEUTRAL}),
+                 ("Thấp hơn", {"fontSize": "9pt", "color": INK})]], pad=12)
         if sowhat:
-            self.textbox("sowhat", M, 648, W, 64, [
+            self.textbox("sowhat", M, 650, W, 62, [
                 [("SO WHAT?   ", {"fontSize": "10pt", "fontWeight": "bold", "color": ACCENT}),
                  (sowhat[0], {"fontSize": "10pt", "fontWeight": "bold", "color": INK})],
                 [(sowhat[1], {"fontSize": "9pt", "color": INK_2})]],
-                bg=SOWHAT_BG, border=ACCENT)
+                bg=SOWHAT_BG, border=SOWHAT_BORDER, pad=14)
 
     def add(self, key, x, y, w, h, visual, filters=None):
         self.z += 100
@@ -667,10 +670,16 @@ class Page:
                    sort=(cat_field, ASC) if sort is True else sort, labels=True, hide_value_axis=True,
                    fill=NEUTRAL, cf_fill="Màu tỷ lệ nghỉ", **kw)
 
-    def heatmap(self, key, x, y, w, h, rows, cols, title):
-        """Ma trận tỷ lệ nghỉ với màu nền theo measure 'Màu heatmap'."""
-        obj = {"values": [{"properties": {"backColor": color_by_measure("Màu heatmap")},
+    def heatmap(self, key, x, y, w, h, rows, cols, title, n_rows=2):
+        """Ma trận tỷ lệ nghỉ với màu nền theo measure 'Màu heatmap'.
+        Đệm dòng được tính từ số dòng để các ô màu lấp kín khung (không để trống phía dưới)."""
+        pad = max(4, int(((h - 34 - 34) / n_rows - 18) / 2))
+        obj = {"values": [{"properties": {"backColor": color_by_measure("Màu heatmap"),
+                                          "fontSize": p(12.0), "fontColor": color(INK)},
                            "selector": {**WILDCARD, "metadata": f"{MEASURES}.Tỷ lệ nghỉ việc"}}],
+               "rowHeaders": [{"properties": {"fontSize": p(11.0)}}],
+               "columnHeaders": [{"properties": {"fontSize": p(10.0)}}],
+               "grid": [{"properties": {"rowPadding": p(float(pad))}}],
                "subTotals": [{"properties": {"rowSubtotals": p(False), "columnSubtotals": p(False)}}]}
         self.chart(key, "pivotTable", x, y, w, h,
                    {"Rows": [rows], "Columns": [cols], "Values": [(RATE, "Tỷ lệ nghỉ việc")]}, title,
@@ -702,7 +711,14 @@ class Page:
             v["syncGroup"] = {"groupName": group, "fieldChanges": True, "filterChanges": True}
         self.add(key, x, y, w, h, v)
 
-    def textbox(self, key, x, y, w, h, paragraphs, bg=SURFACE, border=BORDER):
+    def compare(self, key, x, y, w, h, cols, metrics, title, row_padding=6.0):
+        """Ma trận so sánh: nhóm ở cột, chỉ số ở hàng (thay cho bảng chỉ có 2-3 dòng)."""
+        obj = {"values": [{"properties": {"valuesOnRow": p(True)}}],
+               "grid": [{"properties": {"rowPadding": p(row_padding)}}],
+               "subTotals": [{"properties": {"rowSubtotals": p(False), "columnSubtotals": p(False)}}]}
+        self.chart(key, "pivotTable", x, y, w, h, {"Columns": [cols], "Values": metrics}, title, objects=obj)
+
+    def textbox(self, key, x, y, w, h, paragraphs, bg=SURFACE, border=BORDER, pad=None, vpad=6.0):
         paras = [{"textRuns": [{"value": t, "textStyle": {"fontFamily": "Segoe UI", **st}} for t, st in para]}
                  for para in paragraphs]
         v = {"visualType": "textbox",
@@ -713,6 +729,9 @@ class Page:
                  "background": [{"properties": {"show": p(True), "color": color(bg), "transparency": p(0.0)}}],
                  "border": ([{"properties": {"show": p(True), "color": color(border), "radius": p(10.0)}}]
                             if border else [{"properties": {"show": p(False)}}])}}
+        if pad is not None:
+            v["visualContainerObjects"]["padding"] = [{"properties": {
+                "top": p(vpad), "bottom": p(vpad), "left": p(float(pad)), "right": p(float(pad))}}]
         self.add(key, x, y, w, h, v)
 
     def json(self):
@@ -746,9 +765,9 @@ LEFT_STAY = {"Nghỉ việc": CRITICAL, "Ở lại": CONTEXT}
 # =============================================================================
 def build_pages():
     pages = []
-    BOT = 640
+    BOT = 638
     C3 = grid(3)
-    ROW1_H = 256
+    ROW1_H = (BOT - TOP - G) // 2          # 248: hai hàng biểu đồ bằng nhau
 
     # ---- Trang 1: Tổng quan --------------------------------------------------
     pg = Page("overview", "1. Tổng quan",
@@ -758,7 +777,7 @@ def build_pages():
                "Người nghỉ có lương trung vị thấp hơn 38% so với người ở lại.",
                "Vấn đề không nằm ở cấp lãnh đạo mà ở vị trí tuyến đầu. Lưu ý: R&D có tỷ lệ thấp nhất nhưng "
                "số người nghỉ nhiều nhất (133) - luôn đọc tỷ lệ cùng với số lượng."))
-    y, h = pg.top, 88
+    y, h = pg.top, 80
     for i, ((x, w), (m_, col)) in enumerate(zip(grid(6), [
             ("Tổng nhân viên", None), ("Số người nghỉ việc", CRITICAL), ("Tỷ lệ nghỉ việc", CRITICAL),
             ("Thu nhập TV người nghỉ", CRITICAL), ("Thu nhập TV người ở lại", None),
@@ -805,12 +824,12 @@ def build_pages():
                  ("Employees.Gender_Label", "Giới tính"), "Giới tính: chênh lệch nhỏ")
     pg.rate_bars("edu", "clusteredBarChart", C3[1][0], y2 + hh + G, C3[1][1], BOT - (y2 + hh + G),
                  ("Employees.Education_Label", "Học vấn"), "Học vấn: chênh lệch nhỏ")
-    pg.chart("profile_table", "tableEx", C3[2][0], y2, C3[2][1], BOT - y2,
-             {"Values": [("Employees.Attrition_Label", "Nhóm"), ("m:Tổng nhân viên", "Số NV"),
-                         ("m:Tuổi TB", "Tuổi TB"), ("m:Thâm niên TB (năm)", "Thâm niên"),
-                         ("m:Thu nhập trung vị", "Lương TV"), ("m:% Level 1", "% Level 1"),
-                         ("m:% làm thêm giờ", "% OT"), ("m:% độc thân", "% độc thân")]},
-             "So sánh người nghỉ vs người ở lại", sort=("Employees.Attrition_Label", ASC))
+    pg.compare("profile_table", C3[2][0], y2, C3[2][1], BOT - y2, ("Employees.Attrition_Label", "Nhóm"),
+               [("m:Tổng nhân viên", "Số nhân viên"), ("m:Tuổi TB", "Tuổi trung bình"),
+                ("m:Thâm niên TB (năm)", "Thâm niên TB (năm)"), ("m:Thu nhập trung vị", "Thu nhập trung vị"),
+                ("m:% Level 1", "% Level 1"), ("m:% làm thêm giờ", "% làm thêm giờ"),
+                ("m:% độc thân", "% độc thân")],
+               "So sánh người nghỉ vs người ở lại", row_padding=3.0)
     pages.append(pg)
 
     # ---- Trang 3: Công việc --------------------------------------------------
@@ -854,7 +873,7 @@ def build_pages():
                  ("Employees.StockOption_Label", "Cổ phiếu"), "Không có cổ phiếu: 24,4%")
     pg.heatmap("stock_marital", C3[2][0], y, C3[2][1], ROW1_H, ("Employees.Marital_Label", "Hôn nhân"),
                ("Employees.StockOption_Label", "Cổ phiếu"),
-               "Bẫy gây nhiễu: 100% NV độc thân KHÔNG có cổ phiếu")
+               "Bẫy gây nhiễu: 100% NV độc thân KHÔNG có cổ phiếu", n_rows=3)
     y2 = y + ROW1_H + G
     pg.chart("income_level", "clusteredColumnChart", M, y2, 616, BOT - y2,
              {"Category": [("Employees.JobLevel_Label", "Cấp bậc")],
@@ -910,7 +929,7 @@ def build_pages():
                "557 ở mức trung bình. Giới hạn làm thêm giờ tránh được ~83 ca (35%).",
                "Ưu tiên: (1) giới hạn OT cho Level 1 & NV mới, (2) cổ phiếu cho NV độc thân/Level 1, "
                "(3) chương trình 90 ngày + bàn giao quản lý, (4) nâng mức sàn thu nhập. Không ưu tiên cân bằng lương nội bộ."))
-    y, h = pg.top, 88
+    y, h = pg.top, 80
     cards = grid(5, M, 980)
     for i, ((x, w), (m_, col)) in enumerate(zip(cards, [
             ("NV hiện tại rủi ro cao", CRITICAL), ("NV hiện tại rủi ro trung bình", WARN),
@@ -922,7 +941,7 @@ def build_pages():
     y2 = y + h + G
     pg.rate_bars("risk", "clusteredColumnChart", M, y2, 304, BOT - y2,
                  ("Employees.Risk_Group", "Số yếu tố rủi ro"), "Rủi ro cộng dồn: 4-5 yếu tố = 70%")
-    pg.chart("drivers", "stackedBarChart", M + 304 + G, y2, 452, BOT - y2,
+    pg.chart("drivers", "barChart", M + 304 + G, y2, 452, BOT - y2,
              {"Category": [("Driver_Impact.Factor", "Yếu tố")],
               "Series": [("Driver_Impact.Controllable", "Loại")],
               "Y": [("m:Hệ số rủi ro", "Hệ số (nhóm rủi ro / nhóm còn lại)")]},
@@ -955,40 +974,40 @@ def build_pages():
                "Hạn chế: dữ liệu dạng snapshot (không có ngày nghỉ), không phân biệt nghỉ tự nguyện/bị cho nghỉ, "
                "chi phí thay thế là giả định, một số nhóm nhỏ (HR 63 NV, WLB 'Bad' 80 NV)."),
               slicers=False)
-    y, h = pg.top, 88
+    y, h = pg.top, 80
     for i, ((x, w), (m_, col)) in enumerate(zip(grid(4), [
             ("Số dòng gốc", None), ("Số dòng bị xoá", GOOD), ("Số dòng sạch", None),
             ("Số vấn đề chất lượng", WARN)])):
         pg.card(f"kpi{i}", x, y, w, h, m_, value_color=col)
     y2 = y + h + G
-    pg.chart("flags", "tableEx", M, y2, 616, 200,
+    pg.chart("flags", "tableEx", M, y2, 616, 220,
              {"Values": [("Quality_Flags.Flag_Order", "#"), ("Quality_Flags.Issue", "Vấn đề"),
                          ("sum:Quality_Flags.Rows", "Số dòng"), ("Quality_Flags.Treatment", "Cách xử lý")]},
              "Các vấn đề chất lượng dữ liệu", sort=("Quality_Flags.Flag_Order", ASC))
-    pg.chart("log", "tableEx", M, y2 + 200 + G, 616, BOT - (y2 + 200 + G),
+    pg.chart("log", "tableEx", M, y2 + 220 + G, 616, BOT - (y2 + 220 + G),
              {"Values": [("Cleaning_Log.Log_Order", "#"), ("Cleaning_Log.Step", "Bước"),
                          ("Cleaning_Log.Action", "Hành động"),
                          ("sum:Cleaning_Log.Rows_Affected", "Số dòng"), ("Cleaning_Log.Reason", "Lý do")]},
              "Nhật ký làm sạch (Cleaning Log)", sort=("Cleaning_Log.Log_Order", ASC))
     xr, wr = M + 616 + G, W - 616 - G
-    pg.textbox("traps", xr, y2, wr, BOT - y2, [
-        para("2 cái bẫy gây nhiễu đã được tách riêng", "11pt", BRAND, True),
+    pg.textbox("traps", xr, y2, wr, BOT - y2, pad=20, vpad=14.0, paragraphs=[
+        para("2 cái bẫy gây nhiễu đã được tách riêng", "14pt", BRAND, True),
         para(" "),
-        para("1. Cổ phiếu ↔ Hôn nhân", "10pt", INK, True),
+        para("1. Cổ phiếu ↔ Hôn nhân", "12pt", INK, True),
         para("100% nhân viên độc thân có StockOptionLevel = 0. Nhìn nhanh, 'không cổ phiếu' nghỉ 24,4% - "
              "nhưng một phần là do độc thân. Chỉ xét NV đã kết hôn/ly hôn: không cổ phiếu 21,1% vs có 9,9% "
-             "→ hiệu ứng cổ phiếu VẪN có thật."),
+             "→ hiệu ứng cổ phiếu VẪN có thật.", "11pt"),
         para(" "),
-        para("2. Đổi quản lý ↔ Thâm niên", "10pt", INK, True),
+        para("2. Đổi quản lý ↔ Thâm niên", "12pt", INK, True),
         para("202/263 người có YearsWithCurrentManager = 0 là nhân viên mới. Chỉ xét NV ≥ 2 năm: vừa đổi "
-             "quản lý 23,0% vs 12,4% → hiệu ứng có thật (mẫu nhỏ: 61 người)."),
+             "quản lý 23,0% vs 12,4% → hiệu ứng có thật (mẫu nhỏ: 61 người).", "11pt"),
         para(" "),
-        para("Vì sao không xoá ngoại lai?", "10pt", INK, True),
+        para("Vì sao không xoá ngoại lai?", "12pt", INK, True),
         para("485 NV có thu nhập/thâm niên vượt ngưỡng IQR - đó là quản lý cấp cao và NV lâu năm có thật. "
-             "Chỉ có 237 người nghỉ việc, mỗi bản ghi đều quý cho mô hình."),
+             "Chỉ có 237 người nghỉ việc, mỗi bản ghi đều quý cho mô hình.", "11pt"),
         para(" "),
-        para("Cột không dùng", "10pt", INK, True),
-        para("DailyRate/HourlyRate/MonthlyRate: |r| ≤ 0,03 với MonthlyIncome → không phản ánh lương thật."),
+        para("Cột không dùng", "12pt", INK, True),
+        para("DailyRate/HourlyRate/MonthlyRate: |r| ≤ 0,03 với MonthlyIncome → không phản ánh lương thật.", "11pt"),
     ])
     pages.append(pg)
 

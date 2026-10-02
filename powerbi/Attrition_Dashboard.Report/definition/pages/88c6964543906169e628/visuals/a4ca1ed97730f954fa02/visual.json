@@ -3,14 +3,14 @@
   "name": "a4ca1ed97730f954fa02",
   "position": {
     "x": 332,
-    "y": 216,
+    "y": 222,
     "z": 2500,
-    "height": 424,
+    "height": 416,
     "width": 452,
     "tabOrder": 2500
   },
   "visual": {
-    "visualType": "stackedBarChart",
+    "visualType": "barChart",
     "query": {
       "queryState": {
         "Category": {
@@ -104,7 +104,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#52514E'"
+                      "Value": "'#4A5468'"
                     }
                   }
                 }
@@ -121,7 +121,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#0F5C55'"
+                      "Value": "'#2E4A8C'"
                     }
                   }
                 }
@@ -162,7 +162,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EDA100'"
+                      "Value": "'#C77700'"
                     }
                   }
                 }
@@ -203,7 +203,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#C3C2B7'"
+                      "Value": "'#C3CAD8'"
                     }
                   }
                 }

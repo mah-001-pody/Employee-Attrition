@@ -3,9 +3,9 @@
   "name": "900c8970e867ae40c07f",
   "position": {
     "x": 332,
-    "y": 116,
+    "y": 130,
     "z": 1900,
-    "height": 256,
+    "height": 248,
     "width": 616,
     "tabOrder": 1900
   },
@@ -89,6 +89,24 @@
                   }
                 }
               }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12.0D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1A2233'"
+                    }
+                  }
+                }
+              }
             }
           },
           "selector": {
@@ -100,6 +118,45 @@
               }
             ],
             "metadata": "_Measures.Tỷ lệ nghỉ việc"
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11.0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "36.0D"
+                }
+              }
+            }
           }
         }
       ],

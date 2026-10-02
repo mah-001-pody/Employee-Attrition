@@ -3,9 +3,9 @@
   "name": "85a3cd11330b754d0a4b",
   "position": {
     "x": 16,
-    "y": 648,
+    "y": 650,
     "z": 1200,
-    "height": 64,
+    "height": 62,
     "width": 1248,
     "tabOrder": 1200
   },
@@ -24,7 +24,7 @@
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
                       "fontWeight": "bold",
-                      "color": "#EB6834"
+                      "color": "#C2412D"
                     }
                   },
                   {
@@ -33,7 +33,7 @@
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
                       "fontWeight": "bold",
-                      "color": "#1F2328"
+                      "color": "#1A2233"
                     }
                   }
                 ]
@@ -45,7 +45,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "9pt",
-                      "color": "#52514E"
+                      "color": "#4A5468"
                     }
                   }
                 ]
@@ -85,7 +85,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#FFF4EE'"
+                      "Value": "'#F0F4FC'"
                     }
                   }
                 }
@@ -116,7 +116,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EB6834'"
+                      "Value": "'#9FB3DF'"
                     }
                   }
                 }
@@ -126,6 +126,40 @@
               "expr": {
                 "Literal": {
                   "Value": "10.0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "6.0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "6.0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "14.0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "14.0D"
                 }
               }
             }

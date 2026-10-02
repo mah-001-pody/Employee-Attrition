@@ -19,4 +19,4 @@ python scripts/01_data_cleaning.py
 python scripts/02_build_pbip.py
 ```
 
-**Tải dashboard:** https://github.com/mah-001-pody/Employee-Attrition/raw/claude/nifty-brown-pwpuiv/dist/Attrition_Dashboard.zip
+**Tải dashboard:** https://github.com/mah-001-pody/Employee-Attrition/raw/claude/serene-pasteur-rcxanv/dist/Attrition_Dashboard.zip

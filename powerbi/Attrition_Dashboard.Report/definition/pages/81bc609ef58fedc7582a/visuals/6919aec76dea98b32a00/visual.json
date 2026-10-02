@@ -3,17 +3,17 @@
   "name": "6919aec76dea98b32a00",
   "position": {
     "x": 856,
-    "y": 384,
+    "y": 390,
     "z": 2400,
-    "height": 256,
+    "height": 248,
     "width": 408,
     "tabOrder": 2400
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "pivotTable",
     "query": {
       "queryState": {
-        "Values": {
+        "Columns": {
           "projections": [
             {
               "field": {
@@ -28,7 +28,11 @@
               },
               "queryRef": "Employees.Attrition_Label",
               "displayName": "Nhóm"
-            },
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
             {
               "field": {
                 "Measure": {
@@ -41,7 +45,7 @@
                 }
               },
               "queryRef": "_Measures.Tổng nhân viên",
-              "displayName": "Số NV"
+              "displayName": "Số nhân viên"
             },
             {
               "field": {
@@ -55,7 +59,7 @@
                 }
               },
               "queryRef": "_Measures.Tuổi TB",
-              "displayName": "Tuổi TB"
+              "displayName": "Tuổi trung bình"
             },
             {
               "field": {
@@ -69,7 +73,7 @@
                 }
               },
               "queryRef": "_Measures.Thâm niên TB (năm)",
-              "displayName": "Thâm niên"
+              "displayName": "Thâm niên TB (năm)"
             },
             {
               "field": {
@@ -83,7 +87,7 @@
                 }
               },
               "queryRef": "_Measures.Thu nhập trung vị",
-              "displayName": "Lương TV"
+              "displayName": "Thu nhập trung vị"
             },
             {
               "field": {
@@ -111,7 +115,7 @@
                 }
               },
               "queryRef": "_Measures.% làm thêm giờ",
-              "displayName": "% OT"
+              "displayName": "% làm thêm giờ"
             },
             {
               "field": {
@@ -129,27 +133,57 @@
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Employees"
-                  }
-                },
-                "Property": "Attrition_Label"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ],
-        "isDefaultSort": false
       }
     },
     "drillFilterOtherVisuals": true,
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "valuesOnRow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "3.0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTotals": [
+        {
+          "properties": {
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "visualContainerObjects": {
       "title": [
         {

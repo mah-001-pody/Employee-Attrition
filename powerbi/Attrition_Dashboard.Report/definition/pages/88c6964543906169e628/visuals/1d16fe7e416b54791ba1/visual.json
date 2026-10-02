@@ -3,9 +3,9 @@
   "name": "1d16fe7e416b54791ba1",
   "position": {
     "x": 16,
-    "y": 216,
+    "y": 222,
     "z": 2400,
-    "height": 424,
+    "height": 416,
     "width": 304,
     "tabOrder": 2400
   },
@@ -86,7 +86,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#52514E'"
+                      "Value": "'#4A5468'"
                     }
                   }
                 }
@@ -103,7 +103,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#C3C2B7'"
+                      "Value": "'#C3CAD8'"
                     }
                   }
                 }
