@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "3d7fd93045ce1cfcc4a1",
   "position": {
     "x": 16.42,
@@ -46,7 +46,6 @@
                 }
               },
               "queryRef": "Employees.OverTime_Label",
-              "active": false,
               "displayName": "Làm thêm giờ"
             }
           ]

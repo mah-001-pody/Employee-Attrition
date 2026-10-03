@@ -93,7 +93,7 @@ EMP_ADDED = [
     c("Mgr_Change_Label", S, sort="Mgr_Change_Sort"), c("Mgr_Change_Sort", I, "0", hidden=True),
     c("Training_Label", S, sort="TrainingTimesLastYear"),
     c("Promotion_Label", S), c("Underpaid_Label", S),
-    c("LowSat_Label", S, sort="Low_Satisfaction_Count"),
+    c("LowSat_Label", S, sort="LowSat_Sort"), c("LowSat_Sort", I, "0", hidden=True),
     c("Risk_Sort", I, "0", hidden=True),
     c("Annual_Income", I, "#,##0", "sum"),
 ]
@@ -134,8 +134,9 @@ EMPLOYEES_M = f"""let
     #"Added Training_Label" = Table.AddColumn(#"Added Mgr_Change_Sort", "Training_Label", each Text.From([TrainingTimesLastYear]) & " lần", type text),
     #"Added Promotion_Label" = Table.AddColumn(#"Added Training_Label", "Promotion_Label", each if [Promotion_Stagnation] = 1 then "≥5 năm chưa thăng chức" else "Thăng chức trong 5 năm", type text),
     #"Added Underpaid_Label" = Table.AddColumn(#"Added Promotion_Label", "Underpaid_Label", each if [Underpaid_vs_Level] = 1 then "Thấp hơn 85% cùng cấp" else "Ngang/cao hơn cùng cấp", type text),
-    #"Added LowSat_Label" = Table.AddColumn(#"Added Underpaid_Label", "LowSat_Label", each Text.From([Low_Satisfaction_Count]) & " thang Low", type text),
-    #"Added Risk_Sort" = Table.AddColumn(#"Added LowSat_Label", "Risk_Sort", each if [Risk_Flags] <= 1 then 1 else if [Risk_Flags] <= 3 then 2 else 3, Int64.Type),
+    #"Added LowSat_Label" = Table.AddColumn(#"Added Underpaid_Label", "LowSat_Label", each if [Low_Satisfaction_Count] >= 3 then "3-4 thang Low" else Text.From([Low_Satisfaction_Count]) & " thang Low", type text),
+    #"Added LowSat_Sort" = Table.AddColumn(#"Added LowSat_Label", "LowSat_Sort", each List.Min({{[Low_Satisfaction_Count], 3}}), Int64.Type),
+    #"Added Risk_Sort" = Table.AddColumn(#"Added LowSat_Sort", "Risk_Sort", each if [Risk_Flags] <= 1 then 1 else if [Risk_Flags] <= 3 then 2 else 3, Int64.Type),
     Result = Table.AddColumn(#"Added Risk_Sort", "Annual_Income", each [MonthlyIncome] * 12, Int64.Type)
 in
     Result"""
@@ -189,6 +190,7 @@ def build_drivers():
     d = pd.read_excel(CLEAN_XLSX, sheet_name="Data_Clean")
     ns = d["MaritalStatus"] != "Single"
     y2 = d["YearsAtCompany"] >= 2
+    y5 = d["YearsAtCompany"] >= 5
     K, P_, N = "Kiểm soát được", "Kiểm soát một phần", "Không kiểm soát được"
     specs = [
         ("Làm thêm giờ", d["OverTime_Flag"] == 1, None, "Có", "Không", K),
@@ -202,7 +204,7 @@ def build_drivers():
         ("Không được đào tạo", d["TrainingTimesLastYear"] == 0, None, "0 lần", "≥1 lần", K),
         ("Trả thấp hơn cùng cấp", d["Underpaid_vs_Level"] == 1, None, "<85%", "≥85%", K),
         ("Cấp bậc Level 1", d["JobLevel"] == 1, None, "Level 1", "Level 2-5", P_),
-        ("≥5 năm chưa thăng chức", d["Promotion_Stagnation"] == 1, None, "≥5 năm", "<5 năm", P_),
+        ("≥5 năm chưa thăng chức*", d["Promotion_Stagnation"] == 1, y5, "≥5 năm", "<5 năm", P_),
         ("Thâm niên 0-1 năm", d["YearsAtCompany"] <= 1, None, "0-1 năm", ">1 năm", N),
         ("Tuổi 18-25", d["Age"] <= 25, None, "18-25", "26+", N),
         ("Độc thân", d["MaritalStatus"] == "Single", None, "Độc thân", "Khác", N),
@@ -227,12 +229,13 @@ ACTIONS = [
      "Level 1 làm thêm giờ nghỉ 52,6%; tránh được ~35% số ca nghỉ việc"),
     (2, "Mở rộng quyền chọn cổ phiếu", "Nhân viên độc thân & Level 1",
      "Không cổ phiếu 21,1% vs 9,9% (đã loại yếu tố hôn nhân); 100% NV độc thân chưa có cổ phiếu"),
-    (3, "Chương trình 90 ngày đầu + bàn giao khi đổi quản lý", "Nhân viên mới, người vừa đổi quản lý",
-     "Năm đầu nghỉ 34,9%; vừa đổi quản lý 23,0% vs 12,4%"),
+    (3, "Chương trình 90 ngày đầu, bàn giao khi đổi quản lý, lộ trình thăng chức",
+     "NV mới, người vừa đổi quản lý, NV ≥5 năm chưa thăng chức",
+     "Năm đầu nghỉ 34,9%; vừa đổi quản lý 23,0% vs 12,4%; NV ≥5 năm chưa thăng chức 14,2% vs 9,4%"),
     (4, "Nâng mức sàn thu nhập, hạn chế công tác", "Nhóm < 3K, Sales Representative",
      "<3K nghỉ 28,6%; Sales Rep 39,8%; công tác thường xuyên 24,9%"),
-    (5, "KHÔNG ưu tiên: cân bằng lương nội bộ, đẩy nhanh thăng chức", "-",
-     "Trả thấp hơn cùng cấp chỉ +2,2 điểm %; chậm thăng chức không làm tăng nghỉ việc"),
+    (5, "KHÔNG ưu tiên: cân bằng lương nội bộ", "-",
+     "Trả thấp hơn 85% trung vị cùng cấp chỉ +2,1 điểm % (17,8% vs 15,6%)"),
 ]
 
 DIMS = {
@@ -335,9 +338,9 @@ MEASURE_LIST = [
     ("Tỷ lệ nghỉ (thang hài lòng)",
      "AVERAGEX(Satisfaction_Long, RELATED(Employees[Attrition_Flag]))", "0.0%", F5),
     ("Tổng lương năm người nghỉ",
-     "CALCULATE(SUM(Employees[Annual_Income]), Employees[Attrition_Flag] = 1)", "#,##0", F6),
+     "CALCULATE(SUM(Employees[Annual_Income]), Employees[Attrition_Flag] = 1)", "\\$#,##0", F6),
     ("Tỷ lệ chi phí thay thế", "SELECTEDVALUE('Replacement Cost'[Replacement Cost], 0.5)", "0%", F6),
-    ("Chi phí thay thế ước tính", "[Tổng lương năm người nghỉ] * [Tỷ lệ chi phí thay thế]", "#,##0", F6),
+    ("Chi phí thay thế ước tính", "[Tổng lương năm người nghỉ] * [Tỷ lệ chi phí thay thế]", "\\$#,##0", F6),
     ("Ca nghỉ tránh được (giới hạn OT)", [
         "SUMX(",
         "    VALUES(Employees[JobLevel]),",
@@ -350,9 +353,15 @@ MEASURE_LIST = [
     ("Tỷ lệ nghỉ nếu giới hạn OT",
      "DIVIDE([Số người nghỉ việc] - [Ca nghỉ tránh được (giới hạn OT)], [Tổng nhân viên])", "0.0%", F6),
     ("Chi phí tiết kiệm được", [
-        "[Ca nghỉ tránh được (giới hạn OT)]",
-        "    * DIVIDE([Tổng lương năm người nghỉ], [Số người nghỉ việc])",
-        "    * [Tỷ lệ chi phí thay thế]"], "#,##0", F6),
+        "SUMX(",
+        "    VALUES(Employees[JobLevel]),",
+        "    VAR _noRate = CALCULATE([Tỷ lệ nghỉ việc], Employees[OverTime_Flag] = 0)",
+        f"    VAR _n = CALCULATE([Tổng nhân viên], {OT1})",
+        f"    VAR _left = CALCULATE([Số người nghỉ việc], {OT1})",
+        "    VAR _avoided = MAX(_left - _n * _noRate, 0)",
+        f"    VAR _salary = CALCULATE(AVERAGE(Employees[Annual_Income]), {OT1}, Employees[Attrition_Flag] = 1)",
+        "    RETURN _avoided * _salary",
+        ") * [Tỷ lệ chi phí thay thế]"], "\\$#,##0", F6),
     ("NV hiện tại rủi ro cao",
      "CALCULATE([Tổng nhân viên], Employees[Attrition_Flag] = 0, Employees[Risk_Flags] >= 4)", "#,##0", F6),
     ("NV hiện tại rủi ro trung bình",

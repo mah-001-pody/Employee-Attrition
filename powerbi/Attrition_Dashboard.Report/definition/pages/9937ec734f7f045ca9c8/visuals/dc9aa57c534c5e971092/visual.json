@@ -168,7 +168,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Trả thấp hơn cùng cấp: tác động nhỏ'"
+                  "Value": "'Trả < 85% trung vị cùng cấp: chỉ +2,1 điểm'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

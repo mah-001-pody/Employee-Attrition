@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Điểm rủi ro cộng dồn, đòn bẩy kiểm soát được, mô phỏng chi phí và kế hoạch hành động",
+                    "value": "Ca tránh được = số NV làm thêm giờ đã nghỉ - số sẽ nghỉ nếu họ nghỉ như NV không làm thêm cùng cấp bậc  ·  chi phí tính bằng $ theo lương năm của chính nhóm đó",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "9pt",

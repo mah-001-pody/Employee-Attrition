@@ -30,12 +30,12 @@
 |---|---|---|
 | 1 | Tổng nhân viên · Số người nghỉ · Tỷ lệ nghỉ | **1.470 · 237 · 16,1%** |
 | 1 | Thu nhập trung vị: người nghỉ / người ở lại | **3.202 / 5.204** |
-| 1 | Chi phí thay thế ước tính (mặc định 50%) | **6.807.246** |
+| 1 | Chi phí thay thế ước tính (mặc định 50%) | **$6.807.246** (thẻ hiện ≈ $6,81 triệu) |
 | 3 | Ma trận Làm thêm giờ × Level 1 | **52,6%** |
 | 6 | NV hiện tại rủi ro cao / trung bình | **19 / 557** |
 | 6 | Ca nghỉ tránh được (giới hạn OT) | **83** (35,1%) |
 | 6 | Tỷ lệ nghỉ nếu giới hạn OT | **10,5%** |
-| 6 | Chi phí tiết kiệm được (50%) | **2.392.439** |
+| 6 | Chi phí tiết kiệm được (50%) | **$2.230.374** (thẻ hiện ≈ $2,23 triệu) |
 | 7 | Số dòng gốc / bị xoá / sạch | **1.470 / 0 / 1.470** |
 
 ## 5. Cấu trúc dashboard
@@ -101,3 +101,23 @@ Giữ nguyên theme, bố cục và chỉnh sửa của nhóm trong Final_2 (6 t
 | 6 | Danh sách NV đang làm rủi ro cao | Thanh **số NV rủi ro cao theo vị trí** (giữ nguyên bộ lọc: đang làm + rủi ro 4-5 yếu tố) |
 
 > Thư mục `powerbi/` giờ là bản Final đã chỉnh tay của nhóm. `scripts/02_build_pbip.py` vẫn tạo được bản gốc (chưa có các chỉnh sửa tay này).
+
+## 11. Bản sửa sau rà soát (từ Final_Two)
+Giữ nguyên theme và bố cục của nhóm. Mọi con số dưới đây đã được tính lại từ dữ liệu.
+
+**Sửa kết luận sai**
+- **Thăng chức (trang 5, 6):** nhóm "đã thăng chức trong 5 năm" chứa 215 NV mới (≤1 năm) vốn nghỉ nhiều, nên so chung thì trông như chậm thăng chức không có tác động (14,2% vs 16,5%). Biểu đồ giờ **chỉ xét NV làm ≥5 năm** (bộ lọc YearsAtCompany ≥ 5): chưa thăng chức 5 năm nghỉ **14,2% vs 9,4%** (p ≈ 0,03). Đã sửa tiêu đề trang 5, ô SO WHAT, thẻ hành động số 3 và 5, hệ số trong biểu đồ Đòn bẩy (0,86 → 1,52).
+- **Chi phí tiết kiệm (trang 6):** mỗi ca tránh được giờ được tính theo lương năm của chính nhóm làm thêm giờ đã nghỉ ở từng cấp bậc, thay vì lương trung bình của mọi người nghỉ: **$2.230.374** (trước: $2.392.439). Thêm đơn vị **$** cho các measure chi phí.
+
+**Sửa chữ / số**
+- Trang 1: "quản lý & giám đốc chỉ 2,5–6,9%" (Manufacturing Director 6,9%, trước ghi 4,9%).
+- Trang 2: "42% từ 30 tuổi trở xuống" (dưới 30 tuổi là 38,4%).
+- Trang 4: "+2,1 điểm %" và ghi rõ định nghĩa "< 85% trung vị cùng cấp".
+- Trang 5: "gần gấp đôi" (1,85 lần); "cao gấp 1,4–2,2 lần"; cân bằng CV-CS 31,3%; đào tạo "n = 54"; gộp "3–4 thang Low" (28 NV, 42,9%) vì nhóm 4 thang chỉ có 1 người.
+- Trang 3 và 6: tách rõ **82** (số người nghỉ trong nhóm Level 1 làm thêm giờ) và **~83** (số ca ước tính tránh được); cách tính ghi ở phụ đề trang 6.
+- Trang 6: tiêu đề biểu đồ rủi ro cộng dồn ghi rõ 5 yếu tố (OT, Level 1, độc thân, công tác thường xuyên, ≥1 thang hài lòng Thấp).
+
+**Sửa hiển thị**
+- Donut trang 1, thu nhập theo cấp bậc trang 4, các thẻ KPI: bỏ đơn vị "nghìn" tự động → hiện đủ số (237 / 1.233; 2.437 vs 2.719). Thẻ chi phí hiện theo triệu với 2 chữ số thập phân.
+- Trang 2: biểu đồ giới tính, học vấn và "nghỉ vs ở lại" đổi sang biểu đồ cột → đủ nhãn Nam/Nữ, đủ 5 mức học vấn, nhãn không còn chồng nhau.
+- Trang 6: biểu đồ NV rủi ro cao theo vị trí đổi sang biểu đồ cột → hiện đủ 6 vị trí (tổng 19, trước bị thanh cuộn che 3 người); 5 thẻ hành động cao thêm cho đủ 2 dòng chữ.

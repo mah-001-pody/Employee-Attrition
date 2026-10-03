@@ -168,7 +168,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Càng nhiều thang ''Low'', càng dễ nghỉ'"
+                  "Value": "'Càng nhiều thang ''Low'', càng dễ nghỉ (nhóm 3-4 thang: 28 NV)'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

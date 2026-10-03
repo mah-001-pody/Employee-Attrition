@@ -28,7 +28,7 @@
                     }
                   },
                   {
-                    "value": "Ở mức 'Thấp', tỷ lệ nghỉ cao gấp 1,5-2 lần (cân bằng CV-CS 31,2%; gắn kết 33,7%). NV ≥2 năm vừa đổi quản lý nghỉ 23,0% vs 12,4%. ≥5 năm chưa thăng chức chỉ 14,2%.",
+                    "value": "Ở mức 'Thấp', tỷ lệ nghỉ cao gấp 1,4-2,2 lần (cân bằng CV-CS 31,3%; gắn kết 33,7%). NV ≥2 năm vừa đổi quản lý nghỉ 23,0% vs 12,4%; NV ≥5 năm chưa thăng chức 14,2% vs 9,4%.",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
@@ -41,7 +41,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Thời điểm nguy hiểm là NĂM ĐẦU và lúc ĐỔI QUẢN LÝ, không phải lúc chờ thăng chức, cần chương trình đồng hành 90 ngày, quy trình bàn giao khi đổi quản lý, ≥1 lần đào tạo/năm.",
+                    "value": "Thời điểm nguy hiểm: NĂM ĐẦU, lúc ĐỔI QUẢN LÝ và khi chờ thăng chức quá 5 năm, cần chương trình đồng hành 90 ngày, bàn giao khi đổi quản lý, lộ trình thăng chức rõ ràng, ≥1 lần đào tạo/năm.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "9pt",

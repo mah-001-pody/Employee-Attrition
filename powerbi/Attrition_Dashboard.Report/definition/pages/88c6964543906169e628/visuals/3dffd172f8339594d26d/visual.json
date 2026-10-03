@@ -10,7 +10,7 @@
     "tabOrder": 2700
   },
   "visual": {
-    "visualType": "clusteredBarChart",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -183,7 +183,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'NV ĐANG LÀM rủi ro cao (4-5 yếu tố) theo vị trí - cần liên hệ ngay'"
+                  "Value": "'NV đang làm có rủi ro cao, theo vị trí: cần liên hệ ngay'"
                 }
               }
             },

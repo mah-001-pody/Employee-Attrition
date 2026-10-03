@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "7f0c65ec96ddead7729e",
   "position": {
     "x": 705.97,
@@ -46,7 +46,6 @@
                 }
               },
               "queryRef": "Employees.StockOption_Label",
-              "active": false,
               "displayName": "Cổ phiếu"
             }
           ]

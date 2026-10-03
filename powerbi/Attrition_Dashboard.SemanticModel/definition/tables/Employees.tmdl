@@ -591,7 +591,17 @@ table Employees
 		lineageTag: 64513d8d-bed5-5171-a86a-c65a41122cf1
 		summarizeBy: none
 		sourceColumn: LowSat_Label
-		sortByColumn: Low_Satisfaction_Count
+		sortByColumn: LowSat_Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column LowSat_Sort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e9f1481f-cf4d-55e6-8539-74c673d442af
+		summarizeBy: none
+		sourceColumn: LowSat_Sort
 
 		annotation SummarizationSetBy = Automatic
 
@@ -634,8 +644,9 @@ table Employees
 				    #"Added Training_Label" = Table.AddColumn(#"Added Mgr_Change_Sort", "Training_Label", each Text.From([TrainingTimesLastYear]) & " lần", type text),
 				    #"Added Promotion_Label" = Table.AddColumn(#"Added Training_Label", "Promotion_Label", each if [Promotion_Stagnation] = 1 then "≥5 năm chưa thăng chức" else "Thăng chức trong 5 năm", type text),
 				    #"Added Underpaid_Label" = Table.AddColumn(#"Added Promotion_Label", "Underpaid_Label", each if [Underpaid_vs_Level] = 1 then "Thấp hơn 85% cùng cấp" else "Ngang/cao hơn cùng cấp", type text),
-				    #"Added LowSat_Label" = Table.AddColumn(#"Added Underpaid_Label", "LowSat_Label", each Text.From([Low_Satisfaction_Count]) & " thang Low", type text),
-				    #"Added Risk_Sort" = Table.AddColumn(#"Added LowSat_Label", "Risk_Sort", each if [Risk_Flags] <= 1 then 1 else if [Risk_Flags] <= 3 then 2 else 3, Int64.Type),
+				    #"Added LowSat_Label" = Table.AddColumn(#"Added Underpaid_Label", "LowSat_Label", each if [Low_Satisfaction_Count] >= 3 then "3-4 thang Low" else Text.From([Low_Satisfaction_Count]) & " thang Low", type text),
+				    #"Added LowSat_Sort" = Table.AddColumn(#"Added LowSat_Label", "LowSat_Sort", each List.Min({[Low_Satisfaction_Count], 3}), Int64.Type),
+				    #"Added Risk_Sort" = Table.AddColumn(#"Added LowSat_Sort", "Risk_Sort", each if [Risk_Flags] <= 1 then 1 else if [Risk_Flags] <= 3 then 2 else 3, Int64.Type),
 				    Result = Table.AddColumn(#"Added Risk_Sort", "Annual_Income", each [MonthlyIncome] * 12, Int64.Type)
 				in
 				    Result

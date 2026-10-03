@@ -44,9 +44,9 @@ table Action_Plan
 				        {
 				            {1, "Giới hạn làm thêm giờ", "Level 1 & nhân viên < 1 năm", "Level 1 làm thêm giờ nghỉ 52,6%; tránh được ~35% số ca nghỉ việc"},
 				            {2, "Mở rộng quyền chọn cổ phiếu", "Nhân viên độc thân & Level 1", "Không cổ phiếu 21,1% vs 9,9% (đã loại yếu tố hôn nhân); 100% NV độc thân chưa có cổ phiếu"},
-				            {3, "Chương trình 90 ngày đầu + bàn giao khi đổi quản lý", "Nhân viên mới, người vừa đổi quản lý", "Năm đầu nghỉ 34,9%; vừa đổi quản lý 23,0% vs 12,4%"},
+				            {3, "Chương trình 90 ngày đầu, bàn giao khi đổi quản lý, lộ trình thăng chức", "NV mới, người vừa đổi quản lý, NV ≥5 năm chưa thăng chức", "Năm đầu nghỉ 34,9%; vừa đổi quản lý 23,0% vs 12,4%; NV ≥5 năm chưa thăng chức 14,2% vs 9,4%"},
 				            {4, "Nâng mức sàn thu nhập, hạn chế công tác", "Nhóm < 3K, Sales Representative", "<3K nghỉ 28,6%; Sales Rep 39,8%; công tác thường xuyên 24,9%"},
-				            {5, "KHÔNG ưu tiên: cân bằng lương nội bộ, đẩy nhanh thăng chức", "-", "Trả thấp hơn cùng cấp chỉ +2,2 điểm %; chậm thăng chức không làm tăng nghỉ việc"}
+				            {5, "KHÔNG ưu tiên: cân bằng lương nội bộ", "-", "Trả thấp hơn 85% trung vị cùng cấp chỉ +2,1 điểm % (17,8% vs 15,6%)"}
 				        })
 				in
 				    Source

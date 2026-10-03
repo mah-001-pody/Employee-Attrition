@@ -66,10 +66,10 @@ Tỷ lệ nghỉ việc chung là **16,1%**.
 | Cộng dồn rủi ro | 4–5 yếu tố: **70,3%** | 0–1 yếu tố: 4,9% | Các yếu tố **cộng hưởng** với nhau |
 
 **Phát hiện đi ngược trực giác (nên đưa vào báo cáo):**
-- **"Lâu chưa thăng chức" không làm tăng tỷ lệ nghỉ:** 14,2% so với 16,5%.
-- **"Bị trả thấp hơn đồng nghiệp cùng cấp" chỉ tăng nhẹ:** 17,8% so với 15,6%.
+- **"Lâu chưa thăng chức" CÓ làm tăng tỷ lệ nghỉ - nhưng phải so đúng nhóm:** tính chung thì 14,2% so với 16,5% (trông như không tác động), vì nhóm "đã thăng chức" chứa 215 nhân viên mới (≤1 năm) vốn nghỉ rất nhiều. Chỉ xét NV làm ≥5 năm: chưa thăng chức 5 năm nghỉ **14,2% (n=260) vs 9,4% (n=630)**, p ≈ 0,03.
+- **"Bị trả thấp hơn đồng nghiệp cùng cấp" (< 85% trung vị cùng cấp) chỉ tăng nhẹ:** 17,8% so với 15,6% (+2,1 điểm).
 
-→ Nhân viên nghỉ việc chủ yếu vì **thu nhập tuyệt đối thấp, cấp bậc thấp, làm thêm giờ**, chứ không phải vì so sánh với đồng nghiệp hay vì chậm thăng chức. Cả hai giả thuyết này cần được **kiểm định thống kê** ở bước mô hình.
+→ Nhân viên nghỉ việc chủ yếu vì **thu nhập tuyệt đối thấp, cấp bậc thấp, làm thêm giờ**, ít liên quan tới việc so sánh lương với đồng nghiệp. Chậm thăng chức có tác động với nhân viên lâu năm, nhưng chỉ thấy được khi loại yếu tố gây nhiễu là thâm niên. Cả hai giả thuyết cần được **kiểm định thống kê** ở bước mô hình.
 
 ## 5. Cấu trúc file đầu ra `Attrition_Clean.xlsx`
 
