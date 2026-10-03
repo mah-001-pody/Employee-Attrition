@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "9be70a6818c2d0fe4987",
   "position": {
-    "x": 644,
-    "y": 130,
+    "x": 643.2835820895522,
+    "y": 140.29850746268656,
     "z": 1900,
-    "height": 248,
-    "width": 304,
+    "height": 237.3134328358209,
+    "width": 304.4776119402985,
     "tabOrder": 1900
   },
   "visual": {
@@ -27,6 +27,7 @@
                 }
               },
               "queryRef": "Employees.JobInvolvement_Label",
+              "active": true,
               "displayName": "Gắn kết"
             }
           ]
@@ -65,11 +66,9 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
-    "drillFilterOtherVisuals": true,
     "objects": {
       "labels": [
         {
@@ -176,6 +175,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

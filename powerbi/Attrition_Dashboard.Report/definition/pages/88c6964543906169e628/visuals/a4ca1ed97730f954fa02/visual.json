@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "a4ca1ed97730f954fa02",
   "position": {
-    "x": 332,
-    "y": 222,
+    "x": 331.34328358208955,
+    "y": 232.83582089552237,
     "z": 2500,
-    "height": 416,
-    "width": 452,
+    "height": 404.47761194029846,
+    "width": 452.2388059701492,
     "tabOrder": 2500
   },
   "visual": {
@@ -27,6 +27,7 @@
                 }
               },
               "queryRef": "Driver_Impact.Factor",
+              "active": true,
               "displayName": "Yếu tố"
             }
           ]
@@ -83,11 +84,9 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
-    "drillFilterOtherVisuals": true,
     "objects": {
       "labels": [
         {
@@ -293,6 +292,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

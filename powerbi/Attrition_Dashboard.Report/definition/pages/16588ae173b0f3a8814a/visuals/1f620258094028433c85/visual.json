@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "1f620258094028433c85",
   "position": {
-    "x": 960,
-    "y": 130,
+    "x": 805.9701492537313,
+    "y": 140.29850746268656,
     "z": 2000,
-    "height": 248,
-    "width": 304,
+    "height": 237.3134328358209,
+    "width": 458.2089552238806,
     "tabOrder": 2000
   },
   "visual": {
@@ -27,6 +27,7 @@
                 }
               },
               "queryRef": "Employees.BusinessTravel_Label",
+              "active": true,
               "displayName": "Công tác"
             }
           ]
@@ -65,11 +66,9 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
-    "drillFilterOtherVisuals": true,
     "objects": {
       "labels": [
         {
@@ -176,6 +175,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

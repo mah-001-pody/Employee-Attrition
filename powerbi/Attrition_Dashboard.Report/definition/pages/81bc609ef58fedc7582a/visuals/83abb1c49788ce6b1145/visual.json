@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "83abb1c49788ce6b1145",
   "position": {
-    "x": 16,
-    "y": 64,
+    "x": 16.220592549134643,
+    "y": 63.53065415077735,
     "z": 1200,
-    "height": 54,
-    "width": 200,
+    "height": 66.2340862422998,
+    "width": 200.0539747726606,
     "tabOrder": 1200
   },
   "visual": {
@@ -27,6 +27,7 @@
                 }
               },
               "queryRef": "Dim_Department.Department",
+              "active": true,
               "displayName": "Phòng ban"
             }
           ]
@@ -48,7 +49,6 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
     "visualContainerObjects": {
       "title": [
         {
@@ -68,6 +68,7 @@
       "groupName": "sync_dept",
       "fieldChanges": true,
       "filterChanges": true
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

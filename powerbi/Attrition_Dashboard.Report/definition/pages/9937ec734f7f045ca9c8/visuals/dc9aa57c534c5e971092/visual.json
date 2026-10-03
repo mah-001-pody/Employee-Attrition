@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "dc9aa57c534c5e971092",
   "position": {
     "x": 644,
@@ -27,6 +27,7 @@
                 }
               },
               "queryRef": "Employees.Underpaid_Label",
+              "active": true,
               "displayName": "So với cùng cấp"
             }
           ]
@@ -65,11 +66,9 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
-    "drillFilterOtherVisuals": true,
     "objects": {
       "labels": [
         {
@@ -176,6 +175,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

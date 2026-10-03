@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "cbf2b2416f95d6b89673",
   "position": {
     "x": 960,
@@ -27,6 +27,7 @@
                 }
               },
               "queryRef": "Employees.PerformanceRating_Label",
+              "active": true,
               "displayName": "Hiệu suất"
             }
           ]
@@ -65,11 +66,9 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
-    "drillFilterOtherVisuals": true,
     "objects": {
       "labels": [
         {
@@ -176,6 +175,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

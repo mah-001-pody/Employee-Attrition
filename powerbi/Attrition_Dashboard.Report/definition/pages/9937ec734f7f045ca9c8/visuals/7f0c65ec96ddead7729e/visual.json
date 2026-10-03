@@ -1,19 +1,19 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "7f0c65ec96ddead7729e",
   "position": {
-    "x": 856,
-    "y": 130,
+    "x": 705.97,
+    "y": 140.3,
     "z": 2000,
-    "height": 248,
-    "width": 408,
+    "height": 237.31,
+    "width": 558.21,
     "tabOrder": 2000
   },
   "visual": {
-    "visualType": "pivotTable",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
-        "Rows": {
+        "Category": {
           "projections": [
             {
               "field": {
@@ -27,11 +27,12 @@
                 }
               },
               "queryRef": "Employees.Marital_Label",
+              "active": true,
               "displayName": "Hôn nhân"
             }
           ]
         },
-        "Columns": {
+        "Series": {
           "projections": [
             {
               "field": {
@@ -45,11 +46,12 @@
                 }
               },
               "queryRef": "Employees.StockOption_Label",
+              "active": false,
               "displayName": "Cổ phiếu"
             }
           ]
         },
-        "Values": {
+        "Y": {
           "projections": [
             {
               "field": {
@@ -67,42 +69,92 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Employees"
+                  }
+                },
+                "Property": "Marital_Label"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
-    "drillFilterOtherVisuals": true,
     "objects": {
-      "values": [
+      "labels": [
         {
           "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "_Measures"
-                        }
-                      },
-                      "Property": "Màu heatmap"
-                    }
-                  }
-                }
-              }
-            },
-            "fontSize": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "12.0D"
+                  "Value": "true"
                 }
               }
             },
-            "fontColor": {
+            "color": {
               "solid": {
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1A2233'"
+                      "Value": "'#4A5468'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E5484D'"
                     }
                   }
                 }
@@ -112,71 +164,151 @@
           "selector": {
             "data": [
               {
-                "dataViewWildcard": {
-                  "matchingOption": 1
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Employees"
+                          }
+                        },
+                        "Property": "StockOption_Label"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Cổ phiếu mức 0'"
+                      }
+                    }
+                  }
                 }
               }
-            ],
-            "metadata": "_Measures.Tỷ lệ nghỉ việc"
+            ]
           }
-        }
-      ],
-      "rowHeaders": [
+        },
         {
           "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "11.0D"
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#9FB3DF'"
+                    }
+                  }
                 }
               }
             }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Employees"
+                          }
+                        },
+                        "Property": "StockOption_Label"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Cổ phiếu mức 1'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
-        }
-      ],
-      "columnHeaders": [
+        },
         {
           "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10.0D"
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#4A6FC4'"
+                    }
+                  }
                 }
               }
             }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Employees"
+                          }
+                        },
+                        "Property": "StockOption_Label"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Cổ phiếu mức 2'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
-        }
-      ],
-      "grid": [
+        },
         {
           "properties": {
-            "rowPadding": {
-              "expr": {
-                "Literal": {
-                  "Value": "21.0D"
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2E4A8C'"
+                    }
+                  }
                 }
               }
             }
-          }
-        }
-      ],
-      "subTotals": [
-        {
-          "properties": {
-            "rowSubtotals": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Employees"
+                          }
+                        },
+                        "Property": "StockOption_Label"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Cổ phiếu mức 3'"
+                      }
+                    }
+                  }
                 }
               }
-            },
-            "columnSubtotals": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
+            ]
           }
         }
       ]
@@ -195,13 +327,21 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Bẫy gây nhiễu: 100% NV độc thân KHÔNG có cổ phiếu'"
+                  "Value": "'Bẫy gây nhiễu: NV độc thân chỉ có cột ''mức 0'' (100% không có cổ phiếu)'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

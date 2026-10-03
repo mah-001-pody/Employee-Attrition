@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "65511de989527340d853",
   "position": {
     "x": 0,
@@ -21,10 +21,10 @@
                   {
                     "value": "Tiền có quan trọng - nhưng không theo cách nhiều người nghĩ",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
                       "fontSize": "16pt",
-                      "fontWeight": "bold",
-                      "color": "#FFFFFF"
+                      "color": "#ffffff"
                     }
                   }
                 ]
@@ -32,11 +32,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "Thu nhập tuyệt đối, cổ phiếu và công bằng lương (chỉ dùng MonthlyIncome - các cột Rate là dữ liệu giả)",
+                    "value": "Thu nhập tuyệt đối, cổ phiếu và công bằng lương",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "9pt",
-                      "color": "#BFCBE6"
+                      "color": "#bfcbe6"
                     }
                   }
                 ]
@@ -46,7 +46,6 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
     "visualContainerObjects": {
       "title": [
         {
@@ -139,6 +138,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

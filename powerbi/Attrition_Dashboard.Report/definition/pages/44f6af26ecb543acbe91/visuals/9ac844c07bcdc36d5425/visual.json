@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "9ac844c07bcdc36d5425",
   "position": {
     "x": 16,
@@ -27,6 +27,7 @@
                 }
               },
               "queryRef": "Employees.Mgr_Change_Label",
+              "active": true,
               "displayName": "Quản lý"
             }
           ]
@@ -65,11 +66,9 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
-    "drillFilterOtherVisuals": true,
     "objects": {
       "labels": [
         {
@@ -176,6 +175,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

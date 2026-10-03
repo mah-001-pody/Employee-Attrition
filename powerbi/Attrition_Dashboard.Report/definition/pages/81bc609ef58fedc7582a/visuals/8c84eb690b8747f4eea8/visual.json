@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "8c84eb690b8747f4eea8",
   "position": {
-    "x": 436,
-    "y": 130,
+    "x": 436.60428278087414,
+    "y": 139.2267527134057,
     "z": 1900,
-    "height": 248,
-    "width": 408,
+    "height": 239.253740099736,
+    "width": 406.86652977412734,
     "tabOrder": 1900
   },
   "visual": {
@@ -27,6 +27,7 @@
                 }
               },
               "queryRef": "Dim_Tenure.Tenure_Group",
+              "active": true,
               "displayName": "Thâm niên"
             }
           ]
@@ -65,11 +66,9 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
-    "drillFilterOtherVisuals": true,
     "objects": {
       "labels": [
         {
@@ -176,6 +175,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

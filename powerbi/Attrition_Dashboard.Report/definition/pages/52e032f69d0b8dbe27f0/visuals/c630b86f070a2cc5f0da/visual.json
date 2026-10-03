@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "c630b86f070a2cc5f0da",
   "position": {
     "x": 16,
@@ -27,6 +27,7 @@
                 }
               },
               "queryRef": "Dim_Department.Department",
+              "active": true,
               "displayName": "Phòng ban"
             }
           ]
@@ -65,11 +66,9 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
-    "drillFilterOtherVisuals": true,
     "objects": {
       "labels": [
         {
@@ -140,13 +139,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'...nhưng R&D có số người nghỉ nhiều nhất'"
+                  "Value": "'Nhưng R&D có số người nghỉ nhiều nhất'"
                 }
               }
             }
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

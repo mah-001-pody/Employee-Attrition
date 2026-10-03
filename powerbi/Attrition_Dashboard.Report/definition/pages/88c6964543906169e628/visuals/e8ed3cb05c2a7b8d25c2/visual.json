@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "f61e4afccadf372e41b0",
+  "name": "e8ed3cb05c2a7b8d25c2",
   "position": {
     "x": 795.52,
-    "y": 232.84,
-    "z": 2600,
-    "height": 26,
+    "y": 263.84,
+    "z": 2610,
+    "height": 37.56,
     "width": 468.66,
-    "tabOrder": 2600
+    "tabOrder": 2610
   },
   "visual": {
     "visualType": "textbox",
@@ -19,12 +19,33 @@
               {
                 "textRuns": [
                   {
-                    "value": "Kế hoạch hành động ưu tiên",
+                    "value": "1  ",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "11pt",
+                      "fontSize": "10pt",
+                      "fontWeight": "bold",
+                      "color": "#E5484D"
+                    }
+                  },
+                  {
+                    "value": "Giới hạn làm thêm giờ",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
                       "fontWeight": "bold",
                       "color": "#1A2233"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "     Level 1 & nhân viên < 1 năm · tránh được ~35% ca nghỉ",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "9pt",
+                      "color": "#4A5468"
                     }
                   }
                 ]
@@ -41,7 +62,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
@@ -54,7 +75,18 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2E4A8C'"
+                    }
+                  }
                 }
               }
             }
@@ -81,14 +113,14 @@
             "left": {
               "expr": {
                 "Literal": {
-                  "Value": "4D"
+                  "Value": "10D"
                 }
               }
             },
             "right": {
               "expr": {
                 "Literal": {
-                  "Value": "4D"
+                  "Value": "10D"
                 }
               }
             }

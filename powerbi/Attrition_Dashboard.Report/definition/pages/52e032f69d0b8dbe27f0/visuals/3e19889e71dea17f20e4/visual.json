@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "3e19889e71dea17f20e4",
   "position": {
     "x": 0,
@@ -21,10 +21,10 @@
                   {
                     "value": "Cứ 6 nhân viên có 1 người rời đi - và họ rời đi từ tuyến đầu",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
                       "fontSize": "16pt",
-                      "fontWeight": "bold",
-                      "color": "#FFFFFF"
+                      "color": "#ffffff"
                     }
                   }
                 ]
@@ -32,11 +32,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "Tổng quan nghỉ việc  ·  1.470 nhân viên  ·  tỷ lệ chung 16,1%",
+                    "value": "Tổng quan nghỉ việc  ·  1.470 Nhân viên  ·  Tỷ lệ chung 16,1%",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "9pt",
-                      "color": "#BFCBE6"
+                      "color": "#bfcbe6"
                     }
                   }
                 ]
@@ -46,7 +46,6 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
     "visualContainerObjects": {
       "title": [
         {
@@ -139,6 +138,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

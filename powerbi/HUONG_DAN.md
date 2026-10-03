@@ -87,3 +87,17 @@ python scripts/02_build_pbip.py
 - **Trang 3 & 4:** các heatmap (Làm thêm giờ × Cấp bậc, × Thâm niên, Hôn nhân × Cổ phiếu) tự giãn ô cho kín khung, chữ 12pt, không còn khoảng trắng phía dưới.
 - **Trang 6:** sửa biểu đồ "Đòn bẩy" - loại visual cũ `stackedBarChart` không tồn tại trong Power BI, đổi thành `barChart` (biểu đồ thanh chồng).
 - **Trang 7:** ô "2 cái bẫy gây nhiễu" chữ lớn hơn (11-14pt), bảng vấn đề chất lượng cao hơn.
+
+## 10. Bản Final - thay bảng bằng biểu đồ (từ Final_2)
+Giữ nguyên theme, bố cục và chỉnh sửa của nhóm trong Final_2 (6 trang; trang Chất lượng dữ liệu và trang drill-through đã bỏ). Chỉ thay các bảng/ma trận, mỗi biểu đồ mới nằm đúng trong khung cũ:
+
+| Trang | Bảng cũ | Biểu đồ mới |
+|---|---|---|
+| 2 | Ma trận so sánh người nghỉ vs ở lại | Thanh ngang **% Level 1 · % làm thêm giờ · % độc thân** cho 2 nhóm (60% / 54% / 51% vs 32% / 23% / 28%). Tuổi, thâm niên, thu nhập hiện khi rê chuột |
+| 3 | Heatmap Làm thêm giờ × Cấp bậc | Cột nhóm theo cấp bậc: **có OT (đỏ) vs không OT (xám)** - Level 1 + OT = 52,6% |
+| 3 | Heatmap Làm thêm giờ × Thâm niên | Cột nhóm theo thâm niên: năm đầu + OT = 55,1% |
+| 4 | Heatmap Hôn nhân × Cổ phiếu | Cột nhóm theo hôn nhân, 4 mức cổ phiếu (mức 0 = đỏ, mức 1-3 = xanh đậm dần). Độc thân chỉ có cột "mức 0" → thấy ngay bẫy gây nhiễu |
+| 6 | Kế hoạch hành động ưu tiên | 5 thẻ ưu tiên (1-4 viền xanh chàm, mục "KHÔNG ưu tiên" màu xám) |
+| 6 | Danh sách NV đang làm rủi ro cao | Thanh **số NV rủi ro cao theo vị trí** (giữ nguyên bộ lọc: đang làm + rủi ro 4-5 yếu tố) |
+
+> Thư mục `powerbi/` giờ là bản Final đã chỉnh tay của nhóm. `scripts/02_build_pbip.py` vẫn tạo được bản gốc (chưa có các chỉnh sửa tay này).

@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "1d16fe7e416b54791ba1",
   "position": {
-    "x": 16,
-    "y": 222,
+    "x": 16.417910447761194,
+    "y": 232.83582089552237,
     "z": 2400,
-    "height": 416,
-    "width": 304,
+    "height": 404.47761194029846,
+    "width": 302.98507462686564,
     "tabOrder": 2400
   },
   "visual": {
@@ -27,6 +27,7 @@
                 }
               },
               "queryRef": "Employees.Risk_Group",
+              "active": true,
               "displayName": "Số yếu tố rủi ro"
             }
           ]
@@ -65,11 +66,9 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
-    "drillFilterOtherVisuals": true,
     "objects": {
       "labels": [
         {
@@ -176,6 +175,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

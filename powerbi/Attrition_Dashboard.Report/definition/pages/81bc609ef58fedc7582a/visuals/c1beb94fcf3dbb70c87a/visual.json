@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "c1beb94fcf3dbb70c87a",
   "position": {
-    "x": 16,
-    "y": 130,
+    "x": 16.220592549134643,
+    "y": 139.2267527134057,
     "z": 1800,
-    "height": 248,
-    "width": 408,
+    "height": 239.253740099736,
+    "width": 408.2182458198885,
     "tabOrder": 1800
   },
   "visual": {
@@ -27,6 +27,7 @@
                 }
               },
               "queryRef": "Dim_AgeGroup.Age_Group",
+              "active": true,
               "displayName": "Nhóm tuổi"
             }
           ]
@@ -65,11 +66,9 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
-    "drillFilterOtherVisuals": true,
     "objects": {
       "labels": [
         {
@@ -176,6 +175,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

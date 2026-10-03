@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
-  "name": "a5383a68e8cfac665aad",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "b8b26d9e68d371c2dd81",
   "position": {
-    "x": 0,
-    "y": 0,
-    "z": 1100,
-    "height": 56,
-    "width": 1280,
-    "tabOrder": 1100
+    "x": 795.52,
+    "y": 391.52,
+    "z": 2613,
+    "height": 37.56,
+    "width": 468.66,
+    "tabOrder": 2613
   },
   "visual": {
     "visualType": "textbox",
@@ -19,12 +19,21 @@
               {
                 "textRuns": [
                   {
-                    "value": "Danh sách nhân viên theo nhóm rủi ro",
+                    "value": "4  ",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "16pt",
+                      "fontSize": "10pt",
                       "fontWeight": "bold",
-                      "color": "#FFFFFF"
+                      "color": "#E5484D"
+                    }
+                  },
+                  {
+                    "value": "Nâng mức sàn thu nhập, hạn chế công tác",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "fontWeight": "bold",
+                      "color": "#1A2233"
                     }
                   }
                 ]
@@ -32,11 +41,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "Drill-through: ở trang 6, chuột phải vào một cột 'Rủi ro cộng dồn' → Drill through → Chi tiết nhân viên",
+                    "value": "     Nhóm < 3K, Sales Representative",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "9pt",
-                      "color": "#BFCBE6"
+                      "color": "#4A5468"
                     }
                   }
                 ]
@@ -46,22 +55,21 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
     "visualContainerObjects": {
-      "title": [
+      "background": [
         {
           "properties": {
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
           }
         }
       ],
-      "background": [
+      "border": [
         {
           "properties": {
             "show": {
@@ -76,29 +84,9 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1B2A4A'"
+                      "Value": "'#2E4A8C'"
                     }
                   }
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0.0D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "border": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }
@@ -111,34 +99,35 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "3.0D"
+                  "Value": "2D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "3.0D"
+                  "Value": "2D"
                 }
               }
             },
             "left": {
               "expr": {
                 "Literal": {
-                  "Value": "16.0D"
+                  "Value": "10D"
                 }
               }
             },
             "right": {
               "expr": {
                 "Literal": {
-                  "Value": "16.0D"
+                  "Value": "10D"
                 }
               }
             }
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

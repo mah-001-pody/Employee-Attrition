@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
-  "name": "85a3cd11330b754d0a4b",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "ec87d37a7f108298b295",
   "position": {
-    "x": 16,
-    "y": 650,
-    "z": 1200,
-    "height": 62,
-    "width": 1248,
-    "tabOrder": 1200
+    "x": 795.52,
+    "y": 306.4,
+    "z": 2611,
+    "height": 37.56,
+    "width": 468.66,
+    "tabOrder": 2611
   },
   "visual": {
     "visualType": "textbox",
@@ -19,16 +19,16 @@
               {
                 "textRuns": [
                   {
-                    "value": "SO WHAT?   ",
+                    "value": "2  ",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
                       "fontWeight": "bold",
-                      "color": "#C2412D"
+                      "color": "#E5484D"
                     }
                   },
                   {
-                    "value": "Không xoá dòng nào (1.470 → 1.470). Loại 2 cột hằng số, không dùng 3 cột 'Rate' giả, gắn cờ 197 hồ sơ NumCompaniesWorked mâu thuẫn.",
+                    "value": "Mở rộng quyền chọn cổ phiếu",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -41,7 +41,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Hạn chế: dữ liệu dạng snapshot (không có ngày nghỉ), không phân biệt nghỉ tự nguyện/bị cho nghỉ, chi phí thay thế là giả định, một số nhóm nhỏ (HR 63 NV, WLB 'Bad' 80 NV).",
+                    "value": "     Nhân viên độc thân & Level 1",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "9pt",
@@ -55,21 +55,7 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
     "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
       "background": [
         {
           "properties": {
@@ -77,24 +63,6 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#F0F4FC'"
-                    }
-                  }
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0.0D"
                 }
               }
             }
@@ -116,16 +84,9 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#9FB3DF'"
+                      "Value": "'#2E4A8C'"
                     }
                   }
-                }
-              }
-            },
-            "radius": {
-              "expr": {
-                "Literal": {
-                  "Value": "10.0D"
                 }
               }
             }
@@ -138,34 +99,35 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "6.0D"
+                  "Value": "2D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "6.0D"
+                  "Value": "2D"
                 }
               }
             },
             "left": {
               "expr": {
                 "Literal": {
-                  "Value": "14.0D"
+                  "Value": "10D"
                 }
               }
             },
             "right": {
               "expr": {
                 "Literal": {
-                  "Value": "14.0D"
+                  "Value": "10D"
                 }
               }
             }
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

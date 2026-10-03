@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "76a5c036d16767b3ded2",
   "position": {
-    "x": 16,
-    "y": 390,
+    "x": 16.417910447761194,
+    "y": 389.55223880597015,
     "z": 2100,
-    "height": 248,
-    "width": 408,
+    "height": 247.76119402985074,
+    "width": 459.7014925373134,
     "tabOrder": 2100
   },
   "visual": {
@@ -27,6 +27,7 @@
                 }
               },
               "queryRef": "Employees.Marital_Label",
+              "active": true,
               "displayName": "Hôn nhân"
             }
           ]
@@ -65,11 +66,9 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
-    "drillFilterOtherVisuals": true,
     "objects": {
       "labels": [
         {
@@ -176,6 +175,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

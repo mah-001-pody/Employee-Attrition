@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "7e7fb04076cc38d16dff",
   "position": {
     "x": 16,
@@ -21,19 +21,19 @@
                   {
                     "value": "SO WHAT?   ",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
-                      "fontWeight": "bold",
-                      "color": "#C2412D"
+                      "color": "#c2412d"
                     }
                   },
                   {
                     "value": "Thu nhập <3K nghỉ 28,6% vs 3,8% ở nhóm 15K+. Không có cổ phiếu: 21,1% vs 9,9% (đã loại yếu tố hôn nhân). Bị trả thấp hơn đồng nghiệp cùng cấp chỉ +2 điểm %.",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
-                      "fontWeight": "bold",
-                      "color": "#1A2233"
+                      "color": "#1a2233"
                     }
                   }
                 ]
@@ -41,11 +41,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "Nâng mức sàn thu nhập & mở rộng cổ phiếu cho NV độc thân/Level 1 (100% NV độc thân chưa có cổ phiếu). Cân bằng lương nội bộ có tác động thấp. Người hiệu suất cao nghỉ ngang người khác → chưa có cơ chế giữ người giỏi.",
+                    "value": "Nâng mức sàn thu nhập & mở rộng cổ phiếu cho NV độc thân/Level 1 (100% NV độc thân chưa có cổ phiếu). Cân bằng lương nội bộ có tác động thấp. Người hiệu suất cao nghỉ ngang người khác, chưa có cơ chế giữ người giỏi.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "9pt",
-                      "color": "#4A5468"
+                      "color": "#4a5468"
                     }
                   }
                 ]
@@ -55,7 +55,6 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
     "visualContainerObjects": {
       "title": [
         {
@@ -166,6 +165,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

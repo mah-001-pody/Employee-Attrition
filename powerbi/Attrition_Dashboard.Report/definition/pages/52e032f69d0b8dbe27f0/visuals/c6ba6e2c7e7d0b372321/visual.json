@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "c6ba6e2c7e7d0b372321",
   "position": {
     "x": 16,
@@ -21,19 +21,19 @@
                   {
                     "value": "SO WHAT?   ",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
-                      "fontWeight": "bold",
-                      "color": "#C2412D"
+                      "color": "#c2412d"
                     }
                   },
                   {
                     "value": "Sales Representative mất 39,8% nhân sự; quản lý & giám đốc chỉ 2,5-4,9%. Người nghỉ có lương trung vị thấp hơn 38% so với người ở lại.",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
-                      "fontWeight": "bold",
-                      "color": "#1A2233"
+                      "color": "#1a2233"
                     }
                   }
                 ]
@@ -41,11 +41,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "Vấn đề không nằm ở cấp lãnh đạo mà ở vị trí tuyến đầu. Lưu ý: R&D có tỷ lệ thấp nhất nhưng số người nghỉ nhiều nhất (133) - luôn đọc tỷ lệ cùng với số lượng.",
+                    "value": "Vấn đề không nằm ở cấp lãnh đạo mà ở vị trí tuyến đầu. Lưu ý: R&D có tỷ lệ thấp nhất nhưng số người nghỉ nhiều nhất (133).",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "9pt",
-                      "color": "#4A5468"
+                      "color": "#4a5468"
                     }
                   }
                 ]
@@ -55,7 +55,6 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
     "visualContainerObjects": {
       "title": [
         {
@@ -166,6 +165,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

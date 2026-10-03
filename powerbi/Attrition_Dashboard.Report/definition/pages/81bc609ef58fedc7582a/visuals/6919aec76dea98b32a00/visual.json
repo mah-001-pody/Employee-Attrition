@@ -1,19 +1,19 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "6919aec76dea98b32a00",
   "position": {
-    "x": 856,
-    "y": 390,
+    "x": 959.7,
+    "y": 389.55,
     "z": 2400,
-    "height": 248,
-    "width": 408,
+    "height": 247.76,
+    "width": 304.48,
     "tabOrder": 2400
   },
   "visual": {
-    "visualType": "pivotTable",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
-        "Columns": {
+        "Category": {
           "projections": [
             {
               "field": {
@@ -27,11 +27,55 @@
                 }
               },
               "queryRef": "Employees.Attrition_Label",
+              "active": true,
               "displayName": "Nhóm"
             }
           ]
         },
-        "Values": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "% Level 1"
+                }
+              },
+              "queryRef": "_Measures.% Level 1"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "% làm thêm giờ"
+                }
+              },
+              "queryRef": "_Measures.% làm thêm giờ"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "% độc thân"
+                }
+              },
+              "queryRef": "_Measures.% độc thân"
+            }
+          ]
+        },
+        "Tooltips": {
           "projections": [
             {
               "field": {
@@ -72,8 +116,7 @@
                   "Property": "Thâm niên TB (năm)"
                 }
               },
-              "queryRef": "_Measures.Thâm niên TB (năm)",
-              "displayName": "Thâm niên TB (năm)"
+              "queryRef": "_Measures.Thâm niên TB (năm)"
             },
             {
               "field": {
@@ -86,100 +129,140 @@
                   "Property": "Thu nhập trung vị"
                 }
               },
-              "queryRef": "_Measures.Thu nhập trung vị",
-              "displayName": "Thu nhập trung vị"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "% Level 1"
-                }
-              },
-              "queryRef": "_Measures.% Level 1",
-              "displayName": "% Level 1"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "% làm thêm giờ"
-                }
-              },
-              "queryRef": "_Measures.% làm thêm giờ",
-              "displayName": "% làm thêm giờ"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "% độc thân"
-                }
-              },
-              "queryRef": "_Measures.% độc thân",
-              "displayName": "% độc thân"
+              "queryRef": "_Measures.Thu nhập trung vị"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Employees"
+                  }
+                },
+                "Property": "Attrition_Label"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
-    "drillFilterOtherVisuals": true,
     "objects": {
-      "values": [
+      "labels": [
         {
           "properties": {
-            "valuesOnRow": {
+            "show": {
               "expr": {
                 "Literal": {
                   "Value": "true"
                 }
               }
-            }
-          }
-        }
-      ],
-      "grid": [
-        {
-          "properties": {
-            "rowPadding": {
-              "expr": {
-                "Literal": {
-                  "Value": "3.0D"
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#4A5468'"
+                    }
+                  }
                 }
               }
             }
           }
         }
       ],
-      "subTotals": [
+      "legend": [
         {
           "properties": {
-            "rowSubtotals": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
-            "columnSubtotals": {
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "show": {
               "expr": {
                 "Literal": {
                   "Value": "false"
                 }
               }
             }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2E4A8C'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.% Level 1"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E5484D'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.% làm thêm giờ"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#9FB3DF'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.% độc thân"
           }
         }
       ]
@@ -198,13 +281,21 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'So sánh người nghỉ vs người ở lại'"
+                  "Value": "'Người nghỉ vs người ở lại: nhiều Level 1, làm thêm giờ, độc thân hơn'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

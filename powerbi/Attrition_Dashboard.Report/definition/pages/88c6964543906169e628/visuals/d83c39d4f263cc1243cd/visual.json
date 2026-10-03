@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "d83c39d4f263cc1243cd",
   "position": {
     "x": 864,
@@ -19,12 +19,12 @@
               {
                 "textRuns": [
                   {
-                    "value": "CÁCH ĐỌC MÀU",
+                    "value": "GHI CHÚ",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
                       "fontSize": "8pt",
-                      "fontWeight": "bold",
-                      "color": "#4A5468"
+                      "color": "#4a5468"
                     }
                   }
                 ]
@@ -36,7 +36,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
-                      "color": "#E5484D"
+                      "color": "#e5484d"
                     }
                   },
                   {
@@ -44,7 +44,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "9pt",
-                      "color": "#1A2233"
+                      "color": "#1a2233"
                     }
                   },
                   {
@@ -52,7 +52,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
-                      "color": "#C3CAD8"
+                      "color": "#c3cad8"
                     }
                   },
                   {
@@ -60,7 +60,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "9pt",
-                      "color": "#1A2233"
+                      "color": "#1a2233"
                     }
                   }
                 ]
@@ -70,7 +70,6 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
     "visualContainerObjects": {
       "title": [
         {
@@ -181,6 +180,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

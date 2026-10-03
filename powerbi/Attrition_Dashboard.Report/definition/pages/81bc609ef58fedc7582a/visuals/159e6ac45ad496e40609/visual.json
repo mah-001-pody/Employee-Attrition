@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "159e6ac45ad496e40609",
   "position": {
-    "x": 856,
-    "y": 130,
+    "x": 855.6362569668524,
+    "y": 139.2267527134057,
     "z": 2000,
-    "height": 248,
-    "width": 408,
+    "height": 239.253740099736,
+    "width": 408.2182458198885,
     "tabOrder": 2000
   },
   "visual": {
@@ -27,6 +27,7 @@
                 }
               },
               "queryRef": "Employees.JobLevel_Label",
+              "active": true,
               "displayName": "Cấp bậc"
             }
           ]
@@ -65,11 +66,9 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
-    "drillFilterOtherVisuals": true,
     "objects": {
       "labels": [
         {
@@ -176,6 +175,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

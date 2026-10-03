@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "7fdce068932070c9d37d",
   "position": {
     "x": 16,
@@ -21,19 +21,19 @@
                   {
                     "value": "SO WHAT?   ",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
-                      "fontWeight": "bold",
-                      "color": "#C2412D"
+                      "color": "#c2412d"
                     }
                   },
                   {
                     "value": "Ở mức 'Thấp', tỷ lệ nghỉ cao gấp 1,5-2 lần (cân bằng CV-CS 31,2%; gắn kết 33,7%). NV ≥2 năm vừa đổi quản lý nghỉ 23,0% vs 12,4%. ≥5 năm chưa thăng chức chỉ 14,2%.",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
-                      "fontWeight": "bold",
-                      "color": "#1A2233"
+                      "color": "#1a2233"
                     }
                   }
                 ]
@@ -41,11 +41,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "Thời điểm nguy hiểm là NĂM ĐẦU và lúc ĐỔI QUẢN LÝ, không phải lúc chờ thăng chức → chương trình đồng hành 90 ngày, quy trình bàn giao khi đổi quản lý, ≥1 lần đào tạo/năm.",
+                    "value": "Thời điểm nguy hiểm là NĂM ĐẦU và lúc ĐỔI QUẢN LÝ, không phải lúc chờ thăng chức, cần chương trình đồng hành 90 ngày, quy trình bàn giao khi đổi quản lý, ≥1 lần đào tạo/năm.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "9pt",
-                      "color": "#4A5468"
+                      "color": "#4a5468"
                     }
                   }
                 ]
@@ -55,7 +55,6 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
     "visualContainerObjects": {
       "title": [
         {
@@ -166,6 +165,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

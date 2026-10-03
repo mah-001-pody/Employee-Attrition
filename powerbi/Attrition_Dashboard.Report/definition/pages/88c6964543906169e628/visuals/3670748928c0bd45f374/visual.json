@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
-  "name": "4d6c65a566abf45ec9f3",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "3670748928c0bd45f374",
   "position": {
-    "x": 0,
-    "y": 0,
-    "z": 1100,
-    "height": 56,
-    "width": 1280,
-    "tabOrder": 1100
+    "x": 795.52,
+    "y": 348.96,
+    "z": 2612,
+    "height": 37.56,
+    "width": 468.66,
+    "tabOrder": 2612
   },
   "visual": {
     "visualType": "textbox",
@@ -19,12 +19,21 @@
               {
                 "textRuns": [
                   {
-                    "value": "Vì sao các con số này đáng tin",
+                    "value": "3  ",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "16pt",
+                      "fontSize": "10pt",
                       "fontWeight": "bold",
-                      "color": "#FFFFFF"
+                      "color": "#E5484D"
+                    }
+                  },
+                  {
+                    "value": "Chương trình 90 ngày đầu + bàn giao khi đổi quản lý",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "fontWeight": "bold",
+                      "color": "#1A2233"
                     }
                   }
                 ]
@@ -32,11 +41,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "Tiền xử lý: giữ 100% dữ liệu, xử lý 4 vấn đề nội dung, tránh 2 bẫy gây nhiễu",
+                    "value": "     Nhân viên mới, người vừa đổi quản lý",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "9pt",
-                      "color": "#BFCBE6"
+                      "color": "#4A5468"
                     }
                   }
                 ]
@@ -46,22 +55,21 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
     "visualContainerObjects": {
-      "title": [
+      "background": [
         {
           "properties": {
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
           }
         }
       ],
-      "background": [
+      "border": [
         {
           "properties": {
             "show": {
@@ -76,29 +84,9 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1B2A4A'"
+                      "Value": "'#2E4A8C'"
                     }
                   }
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0.0D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "border": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }
@@ -111,34 +99,35 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "3.0D"
+                  "Value": "2D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "3.0D"
+                  "Value": "2D"
                 }
               }
             },
             "left": {
               "expr": {
                 "Literal": {
-                  "Value": "16.0D"
+                  "Value": "10D"
                 }
               }
             },
             "right": {
               "expr": {
                 "Literal": {
-                  "Value": "16.0D"
+                  "Value": "10D"
                 }
               }
             }
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }
