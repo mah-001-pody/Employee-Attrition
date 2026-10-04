@@ -168,7 +168,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Trả < 85% trung vị cùng cấp: chỉ +2,1 điểm'"
+                  "Value": "'Trả < 85% trung vị cùng cấp: chỉ +2.1 điểm'"
                 }
               }
             },

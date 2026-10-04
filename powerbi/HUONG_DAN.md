@@ -154,3 +154,5 @@ Giữ bảng màu Navy & Teal cho cả 6 trang nhưng **bỏ toàn bộ icon** (
 | Donut trang 1 | Nhãn "237 (16,12%)" và số **16,1%** ở giữa |
 | Ô SO WHAT? | Một ô chữ như bản trước: nhãn "SO WHAT?" màu teal đậm ngay đầu dòng, nền xanh bạc hà `#EAF6F4`, viền `#BFE3DC` |
 | Ghi chú bộ lọc | "Chữ nhận định là số toàn công ty, không đổi theo bộ lọc" ở hàng slicer |
+| Định dạng số | Mọi số trong chữ (tiêu đề, SO WHAT, ghi chú) viết giống nhãn biểu đồ: dấu chấm thập phân, dấu phẩy hàng nghìn (34.9%, 1,470), vì mô hình dùng `culture: en-US` |
+| Trang 2, hàng dưới | Hôn nhân · Giới tính · Học vấn · Người nghỉ vs ở lại xếp ngang, cùng chiều cao, để biểu đồ giới tính/học vấn hiện đủ nhãn trục và nhãn số không chồng nhau |

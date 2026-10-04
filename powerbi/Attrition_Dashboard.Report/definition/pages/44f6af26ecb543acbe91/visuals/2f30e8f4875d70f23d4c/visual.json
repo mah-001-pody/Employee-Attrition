@@ -168,7 +168,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'NV ≥5 năm: chưa thăng chức 5 năm nghỉ 14,2% vs 9,4%'"
+                  "Value": "'NV ≥5 năm: chưa thăng chức 5 năm nghỉ 14.2% vs 9.4%'"
                 }
               }
             },

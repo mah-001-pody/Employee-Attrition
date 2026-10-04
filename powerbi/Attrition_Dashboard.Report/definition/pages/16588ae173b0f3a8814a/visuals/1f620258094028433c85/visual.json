@@ -168,7 +168,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Đi công tác thường xuyên: 24,9%'"
+                  "Value": "'Đi công tác thường xuyên: 24.9%'"
                 }
               }
             }

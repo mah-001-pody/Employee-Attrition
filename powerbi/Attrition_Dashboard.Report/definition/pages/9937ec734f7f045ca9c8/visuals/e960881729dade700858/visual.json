@@ -168,7 +168,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Trong riêng Level 1: lương < 3K nghỉ 29,4% vs 19,1%'"
+                  "Value": "'Trong riêng Level 1: lương < 3K nghỉ 29.4% vs 19.1%'"
                 }
               }
             },

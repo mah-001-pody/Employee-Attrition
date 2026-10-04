@@ -168,7 +168,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Không có cổ phiếu: 24,4%'"
+                  "Value": "'Không có cổ phiếu: 24.4%'"
                 }
               }
             }

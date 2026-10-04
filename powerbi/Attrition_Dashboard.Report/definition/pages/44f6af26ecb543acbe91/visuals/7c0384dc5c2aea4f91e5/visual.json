@@ -168,7 +168,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Không được đào tạo: 27,8% (n = 54)'"
+                  "Value": "'Không được đào tạo: 27.8% (n = 54)'"
                 }
               }
             },
