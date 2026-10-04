@@ -26,7 +26,8 @@
                   "Property": "Tỷ lệ nghỉ nếu giới hạn OT"
                 }
               },
-              "queryRef": "_Measures.Tỷ lệ nghỉ nếu giới hạn OT"
+              "queryRef": "_Measures.Tỷ lệ nghỉ nếu giới hạn OT",
+              "displayName": "Tỷ lệ nghỉ nếu giới hạn OT (ước tính)"
             }
           ]
         }

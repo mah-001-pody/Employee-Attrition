@@ -285,7 +285,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Đòn bẩy: hệ số tỷ lệ nghỉ (* đã loại yếu tố gây nhiễu)'"
+                  "Value": "'Đòn bẩy (số toàn công ty): hệ số tỷ lệ nghỉ (* đã loại yếu tố gây nhiễu). Các yếu tố chồng lấn nên không cộng dồn'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

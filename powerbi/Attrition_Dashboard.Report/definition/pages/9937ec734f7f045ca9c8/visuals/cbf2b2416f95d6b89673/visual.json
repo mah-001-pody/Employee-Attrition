@@ -168,7 +168,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Người giỏi nghỉ ngang người khác'"
+                  "Value": "'Hiệu suất không dự báo nghỉ việc (chỉ có 2 mức đánh giá)'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

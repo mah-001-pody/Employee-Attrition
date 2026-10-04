@@ -26,7 +26,8 @@
                   "Property": "NV hiện tại rủi ro cao"
                 }
               },
-              "queryRef": "_Measures.NV hiện tại rủi ro cao"
+              "queryRef": "_Measures.NV hiện tại rủi ro cao",
+              "displayName": "NV đang làm có hồ sơ rủi ro cao"
             }
           ]
         }

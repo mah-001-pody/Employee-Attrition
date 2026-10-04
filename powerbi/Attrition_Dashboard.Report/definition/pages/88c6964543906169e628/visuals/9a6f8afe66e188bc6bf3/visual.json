@@ -26,7 +26,8 @@
                   "Property": "Ca nghỉ tránh được (giới hạn OT)"
                 }
               },
-              "queryRef": "_Measures.Ca nghỉ tránh được (giới hạn OT)"
+              "queryRef": "_Measures.Ca nghỉ tránh được (giới hạn OT)",
+              "displayName": "Ca nghỉ có thể giảm (ước tính)"
             }
           ]
         }

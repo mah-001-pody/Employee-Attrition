@@ -28,7 +28,7 @@
                     }
                   },
                   {
-                    "value": "Thu nhập <3K nghỉ 28,6% vs 3,8% ở nhóm 15K+. Không có cổ phiếu: 21,1% vs 9,9% (đã loại yếu tố hôn nhân). Bị trả thấp hơn 85% trung vị cùng cấp chỉ +2,1 điểm %.",
+                    "value": "Thu nhập <3K nghỉ 28,6% nhưng 96% là Level 1; trong riêng Level 1 vẫn 29,4% vs 19,1%. Không có cổ phiếu: 21,1% vs 9,9% (đã loại yếu tố hôn nhân). Trả thấp hơn cùng cấp: chỉ +2,1 điểm.",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
@@ -41,7 +41,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Nâng mức sàn thu nhập & mở rộng cổ phiếu cho NV độc thân/Level 1 (100% NV độc thân chưa có cổ phiếu). Cân bằng lương nội bộ có tác động thấp. Người hiệu suất cao nghỉ ngang người khác, chưa có cơ chế giữ người giỏi.",
+                    "value": "Nâng mức sàn thu nhập Level 1; thử nghiệm (pilot) cổ phiếu cho NV độc thân/Level 1 (chưa có dữ liệu kiểm chứng). Cân bằng lương nội bộ có tác động thấp. Điểm hiệu suất (2 mức) không dự báo nghỉ việc.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "9pt",

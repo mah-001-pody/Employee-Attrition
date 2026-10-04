@@ -68,6 +68,9 @@ Tỷ lệ nghỉ việc chung là **16,1%**.
 **Phát hiện đi ngược trực giác (nên đưa vào báo cáo):**
 - **"Lâu chưa thăng chức" CÓ làm tăng tỷ lệ nghỉ - nhưng phải so đúng nhóm:** tính chung thì 14,2% so với 16,5% (trông như không tác động), vì nhóm "đã thăng chức" chứa 215 nhân viên mới (≤1 năm) vốn nghỉ rất nhiều. Chỉ xét NV làm ≥5 năm: chưa thăng chức 5 năm nghỉ **14,2% (n=260) vs 9,4% (n=630)**, p ≈ 0,03.
 - **"Bị trả thấp hơn đồng nghiệp cùng cấp" (< 85% trung vị cùng cấp) chỉ tăng nhẹ:** 17,8% so với 15,6% (+2,1 điểm).
+- **Thu nhập < 3K gần như trùng với Level 1:** 96,5% người dưới 3K là Level 1 (cấp bậc ~ lương r = 0,95). So trong riêng Level 1 thì chênh lệch vẫn còn: <3K nghỉ 29,4% (n=381) vs 3-5K 19,1% (n=162), p ≈ 0,01.
+- **Cổ phiếu chưa đủ bằng chứng cho NV độc thân:** 100% NV độc thân ở mức 0. Ở nhóm không độc thân: mức 0 nghỉ 21,1%, mức 1 9,4%, mức 2 7,6%, nhưng mức 3 lại 17,6% (n=85) → tác dụng không tăng đều theo mức; nên đề xuất ở dạng thử nghiệm.
+- **Điểm hiệu suất không phân biệt được:** chỉ có 2 mức (3: 16,1%, n=1.244; 4: 16,4%, n=226).
 
 → Nhân viên nghỉ việc chủ yếu vì **thu nhập tuyệt đối thấp, cấp bậc thấp, làm thêm giờ**, ít liên quan tới việc so sánh lương với đồng nghiệp. Chậm thăng chức có tác động với nhân viên lâu năm, nhưng chỉ thấy được khi loại yếu tố gây nhiễu là thâm niên. Cả hai giả thuyết cần được **kiểm định thống kê** ở bước mô hình.
 

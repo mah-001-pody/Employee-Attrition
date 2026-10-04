@@ -26,7 +26,8 @@
                   "Property": "Chi phí tiết kiệm được"
                 }
               },
-              "queryRef": "_Measures.Chi phí tiết kiệm được"
+              "queryRef": "_Measures.Chi phí tiết kiệm được",
+              "displayName": "Chi phí có thể tiết kiệm (ước tính)"
             }
           ]
         }

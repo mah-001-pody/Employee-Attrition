@@ -171,26 +171,6 @@ table _Measures
 		displayFolder: 6. Hành động
 		lineageTag: 42811f82-20bd-59d3-948e-64fbc3ec5dfd
 
-	measure 'Số dòng gốc' = CALCULATE(MAX(Cleaning_Log[Rows_After]), Cleaning_Log[Step] = "R0")
-		formatString: #,##0
-		displayFolder: 7. Chất lượng dữ liệu
-		lineageTag: 3ce8cde5-4e44-5b58-8c60-255a5465d070
-
-	measure 'Số dòng sạch' = CALCULATE(MAX(Cleaning_Log[Rows_After]), Cleaning_Log[Step] = "R10")
-		formatString: #,##0
-		displayFolder: 7. Chất lượng dữ liệu
-		lineageTag: 68158538-4483-51e5-a589-f0a822c89e63
-
-	measure 'Số dòng bị xoá' = [Số dòng gốc] - [Số dòng sạch]
-		formatString: #,##0
-		displayFolder: 7. Chất lượng dữ liệu
-		lineageTag: 533711a8-a80b-57c1-8068-3958ec91a9bf
-
-	measure 'Số vấn đề chất lượng' = COUNTROWS(Quality_Flags)
-		formatString: #,##0
-		displayFolder: 7. Chất lượng dữ liệu
-		lineageTag: db02979c-9858-57f2-b641-3058c672bb29
-
 	column Dummy
 		dataType: int64
 		isHidden

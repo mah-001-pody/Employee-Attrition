@@ -168,7 +168,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Rủi ro cộng dồn: 4-5 yếu tố = 70% (OT, Level 1, độc thân, công tác thường xuyên, ≥1 thang hài lòng Thấp)'"
+                  "Value": "'Rủi ro cộng dồn: nhóm 4-5 yếu tố từng nghỉ 70% (OT, Level 1, độc thân, công tác thường xuyên, ≥1 trong 4 thang hài lòng ở mức Thấp)'"
                 }
               }
             },

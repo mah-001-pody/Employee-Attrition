@@ -28,7 +28,7 @@
                     }
                   },
                   {
-                    "value": "Mở rộng quyền chọn cổ phiếu",
+                    "value": "Thử nghiệm (pilot) quyền chọn cổ phiếu",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -41,7 +41,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "     Nhân viên độc thân & Level 1",
+                    "value": "     NV độc thân & Level 1 · hiệu quả chưa được kiểm chứng",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "9pt",

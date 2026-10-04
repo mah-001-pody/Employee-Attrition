@@ -28,7 +28,7 @@
                     }
                   },
                   {
-                    "value": "4-5 yếu tố rủi ro → 70,3% nghỉ việc (0-1 yếu tố: 4,9%). 19 NV hiện tại ở nhóm rủi ro cao, 557 ở mức trung bình. Giới hạn làm thêm giờ tránh được ~83 ca (35%).",
+                    "value": "Nhóm có 4-5 yếu tố rủi ro từng nghỉ 70,3% (0-1 yếu tố: 4,9%); 19 NV đang làm có hồ sơ giống nhóm này. Giới hạn làm thêm giờ có thể giảm tới ~83 ca (35%, ước tính).",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -41,7 +41,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Ưu tiên: (1) giới hạn OT cho Level 1 & NV mới, (2) cổ phiếu cho NV độc thân/Level 1, (3) 90 ngày đầu + bàn giao quản lý + lộ trình thăng chức, (4) nâng mức sàn thu nhập. Không ưu tiên cân bằng lương nội bộ.",
+                    "value": "Ưu tiên: (1) giới hạn OT cho Level 1 & NV mới, (2) thử nghiệm cổ phiếu cho NV độc thân/Level 1, (3) 90 ngày đầu + bàn giao quản lý + lộ trình thăng chức, (4) nâng mức sàn thu nhập. Không ưu tiên cân bằng lương nội bộ.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "9pt",

@@ -26,7 +26,8 @@
                   "Property": "NV hiện tại rủi ro trung bình"
                 }
               },
-              "queryRef": "_Measures.NV hiện tại rủi ro trung bình"
+              "queryRef": "_Measures.NV hiện tại rủi ro trung bình",
+              "displayName": "NV đang làm có hồ sơ rủi ro TB"
             }
           ]
         }

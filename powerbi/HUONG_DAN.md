@@ -32,11 +32,10 @@
 | 1 | Thu nhập trung vị: người nghỉ / người ở lại | **3.202 / 5.204** |
 | 1 | Chi phí thay thế ước tính (mặc định 50%) | **$6.807.246** (thẻ hiện ≈ $6,81 triệu) |
 | 3 | Ma trận Làm thêm giờ × Level 1 | **52,6%** |
-| 6 | NV hiện tại rủi ro cao / trung bình | **19 / 557** |
-| 6 | Ca nghỉ tránh được (giới hạn OT) | **83** (35,1%) |
-| 6 | Tỷ lệ nghỉ nếu giới hạn OT | **10,5%** |
-| 6 | Chi phí tiết kiệm được (50%) | **$2.230.374** (thẻ hiện ≈ $2,23 triệu) |
-| 7 | Số dòng gốc / bị xoá / sạch | **1.470 / 0 / 1.470** |
+| 6 | NV đang làm có hồ sơ rủi ro cao / TB | **19 / 557** |
+| 6 | Ca nghỉ có thể giảm (ước tính) | **83** (35,1%) |
+| 6 | Tỷ lệ nghỉ nếu giới hạn OT (ước tính) | **10,5%** |
+| 6 | Chi phí có thể tiết kiệm (ước tính, 50%) | **$2.230.374** (thẻ hiện ≈ $2,23 triệu) |
 
 ## 5. Cấu trúc dashboard
 
@@ -60,7 +59,7 @@ Dim_Department ─┐
 Dim_AgeGroup ───┼──► Employees (1 dòng/nhân viên) ◄── Satisfaction_Long (unpivot 5 thang hài lòng)
 Dim_IncomeBand ─┤
 Dim_Tenure ─────┘
-Bảng độc lập: _Measures (34 measure) · Driver_Impact · Action_Plan · Replacement Cost (what-if) · Cleaning_Log · Quality_Flags
+Bảng độc lập (bản Final): _Measures (30 measure) · Driver_Impact · Replacement Cost (what-if)
 ```
 
 ## 7. Nếu gặp lỗi
@@ -121,3 +120,24 @@ Giữ nguyên theme và bố cục của nhóm. Mọi con số dưới đây đ�
 - Donut trang 1, thu nhập theo cấp bậc trang 4, các thẻ KPI: bỏ đơn vị "nghìn" tự động → hiện đủ số (237 / 1.233; 2.437 vs 2.719). Thẻ chi phí hiện theo triệu với 2 chữ số thập phân.
 - Trang 2: biểu đồ giới tính, học vấn và "nghỉ vs ở lại" đổi sang biểu đồ cột → đủ nhãn Nam/Nữ, đủ 5 mức học vấn, nhãn không còn chồng nhau.
 - Trang 6: biểu đồ NV rủi ro cao theo vị trí đổi sang biểu đồ cột → hiện đủ 6 vị trí (tổng 19, trước bị thanh cuộn che 3 người); 5 thẻ hành động cao thêm cho đủ 2 dòng chữ.
+
+## 12. Bản sửa sau rà soát lần 2 - kết luận không vượt quá dữ liệu
+Số liệu không đổi; bản này sửa cách **diễn đạt** để không khẳng định quan hệ nhân quả khi dữ liệu chỉ cho thấy tương quan.
+
+**Ước tính, không phải chắc chắn**
+- Trang 6: "Khoảng 1/3 số ca nghỉ có thể tránh được" → "**có thể giảm tới ~1/3 (ước tính)**". Phụ đề ghi rõ giả định: làm thêm giờ là nguyên nhân. Kiểm tra độ vững: tách theo cấp bậc, tuổi, thâm niên, phòng ban hay hôn nhân đều ra 81-84 ca. Các thẻ KPI ghi "(ước tính)".
+- Trang 6: "4-5 yếu tố → 70,3% nghỉ" → "nhóm có 4-5 yếu tố **từng nghỉ** 70,3%; 19 NV đang làm **có hồ sơ giống nhóm này**" (70% là tỷ lệ đã xảy ra trong dữ liệu, không phải xác suất nghỉ).
+- Trang 4: bỏ "chưa có cơ chế giữ người giỏi" → "**điểm hiệu suất (chỉ 2 mức) không dự báo nghỉ việc**" (mức 3: 16,1%, n=1.244; mức 4: 16,4%, n=226).
+
+**Lập luận chặt hơn**
+- Trang 4: biểu đồ "Thu nhập < 3K" giờ **chỉ xét Level 1** (96,5% người dưới 3K là Level 1). Trong Level 1: <3K nghỉ **29,4% (n=381)** vs 3-5K **19,1% (n=162)**, p ≈ 0,01 → đề xuất nâng sàn lương vẫn có cơ sở.
+- Cổ phiếu: không NV độc thân nào có cổ phiếu, và ở nhóm không độc thân mức 3 lại nghỉ 17,6% (n=85) → đổi thành "**thử nghiệm (pilot)** cổ phiếu cho NV độc thân/Level 1, hiệu quả chưa được kiểm chứng".
+- Biểu đồ Đòn bẩy: ghi chú "các yếu tố chồng lấn nên không cộng dồn" (cấp bậc ~ lương r = 0,95; cấp bậc ~ thâm niên r = 0,53).
+- Thang hài lòng: ghi rõ "Số thang Low" và cờ rủi ro dùng **4 thang hài lòng**; biểu đồ đầu trang 5 dùng 5 thang (4 thang + mức gắn kết).
+
+**Chú thích & dọn mô hình**
+- Ô GHI CHÚ trên mọi trang: "chữ nhận định là số toàn công ty, không đổi theo bộ lọc".
+- Biểu đồ đổi quản lý: cột "NV < 2 năm" chỉ để đủ nhóm; dữ liệu không cho biết ai rời đi trước.
+- Xoá 4 measure của "7. Chất lượng dữ liệu" và 3 bảng không dùng (Cleaning_Log, Quality_Flags, Action_Plan). Nhật ký làm sạch vẫn có trong `Attrition_Clean.xlsx`.
+
+> `scripts/02_build_pbip.py` tạo **bản gốc** (có trang 7 và các bảng trên); thư mục `powerbi/` là **bản Final** đã chỉnh tay và sửa theo 2 vòng rà soát.

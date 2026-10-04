@@ -168,7 +168,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Vừa đổi quản lý (NV ≥2 năm): 23,0%'"
+                  "Value": "'Vừa đổi quản lý (NV ≥2 năm): 23,0% vs 12,4% · cột ''NV < 2 năm'' chỉ để đủ nhóm; không rõ ai rời trước'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

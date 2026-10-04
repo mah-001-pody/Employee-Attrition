@@ -326,7 +326,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Tỷ lệ nghỉ theo mức hài lòng của 5 thang đo (đỏ = mức Thấp)'"
+                  "Value": "'Tỷ lệ nghỉ theo mức của 5 thang đo: 4 thang hài lòng + mức gắn kết (đỏ = mức Thấp)'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
