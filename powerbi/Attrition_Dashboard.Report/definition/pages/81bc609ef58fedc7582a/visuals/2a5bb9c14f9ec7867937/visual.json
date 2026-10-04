@@ -3,9 +3,9 @@
   "name": "2a5bb9c14f9ec7867937",
   "position": {
     "x": 16,
-    "y": 632,
+    "y": 650,
     "z": 1700,
-    "height": 80,
+    "height": 62,
     "width": 1248,
     "tabOrder": 1700
   },
@@ -18,6 +18,15 @@
             "paragraphs": [
               {
                 "textRuns": [
+                  {
+                    "value": "SO WHAT?   ",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "fontWeight": "bold",
+                      "color": "#1F7A70"
+                    }
+                  },
                   {
                     "value": "18-25 tuổi nghỉ 35,8%; năm đầu 34,9%; Level 1 là 26,3%; độc thân 25,5%. 60% người nghỉ là Level 1, 42% từ 30 tuổi trở xuống.",
                     "textStyle": {
@@ -129,21 +138,21 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "4D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "6D"
+                  "Value": "4D"
                 }
               }
             },
             "left": {
               "expr": {
                 "Literal": {
-                  "Value": "214D"
+                  "Value": "14D"
                 }
               }
             },

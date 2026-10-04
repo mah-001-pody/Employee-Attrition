@@ -3,9 +3,9 @@
   "name": "e5db93c957afc10ba747",
   "position": {
     "x": 16,
-    "y": 632,
+    "y": 650,
     "z": 1700,
-    "height": 80,
+    "height": 62,
     "width": 1248,
     "tabOrder": 1700
   },
@@ -18,6 +18,15 @@
             "paragraphs": [
               {
                 "textRuns": [
+                  {
+                    "value": "SO WHAT?   ",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "fontWeight": "bold",
+                      "color": "#1F7A70"
+                    }
+                  },
                   {
                     "value": "Nhóm có 4-5 yếu tố rủi ro từng nghỉ 70,3% (0-1 yếu tố: 4,9%); 19 NV đang làm có hồ sơ giống nhóm này. Giới hạn làm thêm giờ có thể giảm tới ~83 ca (35%, ước tính).",
                     "textStyle": {
@@ -129,21 +138,21 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "4D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "6D"
+                  "Value": "4D"
                 }
               }
             },
             "left": {
               "expr": {
                 "Literal": {
-                  "Value": "214D"
+                  "Value": "14D"
                 }
               }
             },

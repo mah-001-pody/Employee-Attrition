@@ -3,9 +3,9 @@
   "name": "3c93b2806f928cfddf96",
   "position": {
     "x": 16,
-    "y": 632,
+    "y": 650,
     "z": 1700,
-    "height": 80,
+    "height": 62,
     "width": 1248,
     "tabOrder": 1700
   },
@@ -18,6 +18,15 @@
             "paragraphs": [
               {
                 "textRuns": [
+                  {
+                    "value": "SO WHAT?   ",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "fontWeight": "bold",
+                      "color": "#1F7A70"
+                    }
+                  },
                   {
                     "value": "Level 1 làm thêm giờ nghỉ 52,6%; nhân viên năm đầu làm thêm giờ nghỉ 55,1%. Riêng 156 NV Level 1 làm thêm giờ đã có 82 người nghỉ (35% tổng số người nghỉ).",
                     "textStyle": {
@@ -129,21 +138,21 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "4D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "6D"
+                  "Value": "4D"
                 }
               }
             },
             "left": {
               "expr": {
                 "Literal": {
-                  "Value": "214D"
+                  "Value": "14D"
                 }
               }
             },

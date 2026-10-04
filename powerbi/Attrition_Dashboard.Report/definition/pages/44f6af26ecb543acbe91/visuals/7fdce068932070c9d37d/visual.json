@@ -3,9 +3,9 @@
   "name": "7fdce068932070c9d37d",
   "position": {
     "x": 16,
-    "y": 632,
+    "y": 650,
     "z": 1700,
-    "height": 80,
+    "height": 62,
     "width": 1248,
     "tabOrder": 1700
   },
@@ -18,6 +18,15 @@
             "paragraphs": [
               {
                 "textRuns": [
+                  {
+                    "value": "SO WHAT?   ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "color": "#1F7A70"
+                    }
+                  },
                   {
                     "value": "Ở mức 'Thấp', tỷ lệ nghỉ cao gấp 1,4-2,2 lần (cân bằng CV-CS 31,3%; gắn kết 33,7%). NV ≥2 năm vừa đổi quản lý nghỉ 23,0% vs 12,4%; NV ≥5 năm chưa thăng chức 14,2% vs 9,4%.",
                     "textStyle": {
@@ -128,21 +137,21 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "4D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "6D"
+                  "Value": "4D"
                 }
               }
             },
             "left": {
               "expr": {
                 "Literal": {
-                  "Value": "214D"
+                  "Value": "14D"
                 }
               }
             },

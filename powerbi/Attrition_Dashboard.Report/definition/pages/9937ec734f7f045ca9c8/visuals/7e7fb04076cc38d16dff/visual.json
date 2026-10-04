@@ -3,9 +3,9 @@
   "name": "7e7fb04076cc38d16dff",
   "position": {
     "x": 16,
-    "y": 632,
+    "y": 650,
     "z": 1700,
-    "height": 80,
+    "height": 62,
     "width": 1248,
     "tabOrder": 1700
   },
@@ -18,6 +18,15 @@
             "paragraphs": [
               {
                 "textRuns": [
+                  {
+                    "value": "SO WHAT?   ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "color": "#1F7A70"
+                    }
+                  },
                   {
                     "value": "Thu nhập <3K nghỉ 28,6% nhưng 96% là Level 1; trong riêng Level 1 vẫn 29,4% vs 19,1%. Không có cổ phiếu: 21,1% vs 9,9% (đã loại yếu tố hôn nhân). Trả thấp hơn cùng cấp: chỉ +2,1 điểm.",
                     "textStyle": {
@@ -128,21 +137,21 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "4D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "6D"
+                  "Value": "4D"
                 }
               }
             },
             "left": {
               "expr": {
                 "Literal": {
-                  "Value": "214D"
+                  "Value": "14D"
                 }
               }
             },
