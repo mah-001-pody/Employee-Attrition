@@ -5,7 +5,7 @@
     "x": 959.7,
     "y": 389.55,
     "z": 2400,
-    "height": 247.76,
+    "height": 230.45,
     "width": 304.48,
     "tabOrder": 2400
   },
@@ -218,7 +218,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#2E4A8C'"
+                      "Value": "'#2A9D8F'"
                     }
                   }
                 }
@@ -254,7 +254,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#9FB3DF'"
+                      "Value": "'#3C8DBC'"
                     }
                   }
                 }

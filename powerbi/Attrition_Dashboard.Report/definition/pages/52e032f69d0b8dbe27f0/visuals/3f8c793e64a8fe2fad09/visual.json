@@ -5,7 +5,7 @@
     "x": 960,
     "y": 222,
     "z": 2700,
-    "height": 416,
+    "height": 398,
     "width": 304,
     "tabOrder": 2700
   },
@@ -97,6 +97,13 @@
                   "Value": "1D"
                 }
               }
+            },
+            "labelStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Data value, percent of total'"
+                }
+              }
             }
           }
         }
@@ -150,7 +157,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#9FB3DF'"
+                      "Value": "'#3C8DBC'"
                     }
                   }
                 }
@@ -199,6 +206,19 @@
               "expr": {
                 "Literal": {
                   "Value": "'Top'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "slices": [
+        {
+          "properties": {
+            "innerRadiusRatio": {
+              "expr": {
+                "Literal": {
+                  "Value": "68D"
                 }
               }
             }

@@ -33,7 +33,7 @@
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
                       "fontWeight": "bold",
-                      "color": "#1A2233"
+                      "color": "#1E2A3A"
                     }
                   }
                 ]
@@ -84,7 +84,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#2E4A8C'"
+                      "Value": "'#2A9D8F'"
                     }
                   }
                 }

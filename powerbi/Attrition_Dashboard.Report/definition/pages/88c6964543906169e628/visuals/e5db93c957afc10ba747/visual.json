@@ -3,9 +3,9 @@
   "name": "e5db93c957afc10ba747",
   "position": {
     "x": 16,
-    "y": 650,
+    "y": 632,
     "z": 1700,
-    "height": 62,
+    "height": 80,
     "width": 1248,
     "tabOrder": 1700
   },
@@ -19,21 +19,12 @@
               {
                 "textRuns": [
                   {
-                    "value": "SO WHAT?   ",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "10pt",
-                      "fontWeight": "bold",
-                      "color": "#C2412D"
-                    }
-                  },
-                  {
                     "value": "Nhóm có 4-5 yếu tố rủi ro từng nghỉ 70,3% (0-1 yếu tố: 4,9%); 19 NV đang làm có hồ sơ giống nhóm này. Giới hạn làm thêm giờ có thể giảm tới ~83 ca (35%, ước tính).",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
                       "fontWeight": "bold",
-                      "color": "#1A2233"
+                      "color": "#1E2A3A"
                     }
                   }
                 ]
@@ -85,7 +76,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#F0F4FC'"
+                      "Value": "'#EAF6F4'"
                     }
                   }
                 }
@@ -94,7 +85,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "0.0D"
+                  "Value": "0D"
                 }
               }
             }
@@ -116,7 +107,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#9FB3DF'"
+                      "Value": "'#BFE3DC'"
                     }
                   }
                 }
@@ -125,7 +116,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "10.0D"
+                  "Value": "10D"
                 }
               }
             }
@@ -138,28 +129,28 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "6.0D"
+                  "Value": "8D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "6.0D"
+                  "Value": "6D"
                 }
               }
             },
             "left": {
               "expr": {
                 "Literal": {
-                  "Value": "14.0D"
+                  "Value": "214D"
                 }
               }
             },
             "right": {
               "expr": {
                 "Literal": {
-                  "Value": "14.0D"
+                  "Value": "14D"
                 }
               }
             }

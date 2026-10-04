@@ -27,7 +27,11 @@ table _Measures
 		displayFolder: 1. Tổng quan
 		lineageTag: fc876dfd-e275-59cc-9f26-d68f26c20956
 
-	measure 'Màu tỷ lệ nghỉ' = IF([Tỷ lệ nghỉ việc] > [Tỷ lệ nghỉ (mức chung)], "#E5484D", "#C3CAD8")
+	measure 'Màu tỷ lệ nghỉ' =
+			VAR _r = [Tỷ lệ nghỉ việc]
+			VAR _avg = [Tỷ lệ nghỉ (mức chung)]
+			RETURN
+			    SWITCH(TRUE(), ISBLANK(_r), BLANK(), _r >= 1.8 * _avg, "#E5484D", _r > _avg, "#2A9D8F", "#9CC9E8")
 		formatString: General
 		displayFolder: 1. Tổng quan
 		lineageTag: 9c5310ea-c30d-55c5-bf61-fc7a0c00b846

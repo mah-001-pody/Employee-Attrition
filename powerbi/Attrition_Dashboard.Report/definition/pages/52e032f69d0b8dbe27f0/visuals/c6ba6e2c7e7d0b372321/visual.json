@@ -3,9 +3,9 @@
   "name": "c6ba6e2c7e7d0b372321",
   "position": {
     "x": 16,
-    "y": 650,
+    "y": 632,
     "z": 1700,
-    "height": 62,
+    "height": 80,
     "width": 1248,
     "tabOrder": 1700
   },
@@ -19,21 +19,12 @@
               {
                 "textRuns": [
                   {
-                    "value": "SO WHAT?   ",
-                    "textStyle": {
-                      "fontWeight": "bold",
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "10pt",
-                      "color": "#c2412d"
-                    }
-                  },
-                  {
                     "value": "Sales Representative mất 39,8% nhân sự; quản lý & giám đốc chỉ 2,5-6,9%. Người nghỉ có lương trung vị thấp hơn 38% so với người ở lại.",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
-                      "color": "#1a2233"
+                      "color": "#1E2A3A"
                     }
                   }
                 ]
@@ -84,7 +75,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#F0F4FC'"
+                      "Value": "'#EAF6F4'"
                     }
                   }
                 }
@@ -93,7 +84,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "0.0D"
+                  "Value": "0D"
                 }
               }
             }
@@ -115,7 +106,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#9FB3DF'"
+                      "Value": "'#BFE3DC'"
                     }
                   }
                 }
@@ -124,7 +115,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "10.0D"
+                  "Value": "10D"
                 }
               }
             }
@@ -137,28 +128,28 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "6.0D"
+                  "Value": "8D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "6.0D"
+                  "Value": "6D"
                 }
               }
             },
             "left": {
               "expr": {
                 "Literal": {
-                  "Value": "14.0D"
+                  "Value": "214D"
                 }
               }
             },
             "right": {
               "expr": {
                 "Literal": {
-                  "Value": "14.0D"
+                  "Value": "14D"
                 }
               }
             }

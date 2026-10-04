@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "a789f04d279c05daa363",
   "position": {
-    "x": 0,
-    "y": 0,
+    "x": 16,
+    "y": 4,
     "z": 1100,
-    "height": 56,
-    "width": 1280,
+    "height": 52,
+    "width": 1248,
     "tabOrder": 1100
   },
   "visual": {
@@ -32,11 +32,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "Ước tính, giả định làm thêm giờ là nguyên nhân: số NV làm thêm giờ đã nghỉ - số sẽ nghỉ nếu họ nghỉ như NV không làm thêm cùng cấp bậc  ·  chi phí tính bằng $ theo lương năm của chính nhóm đó",
+                    "value": "Ước tính (giả định làm thêm giờ là nguyên nhân): NV làm thêm giờ đã nghỉ trừ số sẽ nghỉ theo tỷ lệ của NV không làm thêm cùng cấp · chi phí theo lương năm ($)",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "9pt",
-                      "color": "#BFCBE6"
+                      "color": "#C9D6E8"
                     }
                   }
                 ]
@@ -76,7 +76,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1B2A4A'"
+                      "Value": "'#1E3A5F'"
                     }
                   }
                 }
@@ -98,7 +98,25 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1E3A5F'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }
@@ -111,28 +129,28 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "3.0D"
+                  "Value": "3D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "3.0D"
+                  "Value": "3D"
                 }
               }
             },
             "left": {
               "expr": {
                 "Literal": {
-                  "Value": "16.0D"
+                  "Value": "62D"
                 }
               }
             },
             "right": {
               "expr": {
                 "Literal": {
-                  "Value": "16.0D"
+                  "Value": "290D"
                 }
               }
             }

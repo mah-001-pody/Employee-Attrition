@@ -3,9 +3,9 @@
   "name": "7e7fb04076cc38d16dff",
   "position": {
     "x": 16,
-    "y": 650,
+    "y": 632,
     "z": 1700,
-    "height": 62,
+    "height": 80,
     "width": 1248,
     "tabOrder": 1700
   },
@@ -19,21 +19,12 @@
               {
                 "textRuns": [
                   {
-                    "value": "SO WHAT?   ",
-                    "textStyle": {
-                      "fontWeight": "bold",
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "10pt",
-                      "color": "#c2412d"
-                    }
-                  },
-                  {
                     "value": "Thu nhập <3K nghỉ 28,6% nhưng 96% là Level 1; trong riêng Level 1 vẫn 29,4% vs 19,1%. Không có cổ phiếu: 21,1% vs 9,9% (đã loại yếu tố hôn nhân). Trả thấp hơn cùng cấp: chỉ +2,1 điểm.",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
-                      "color": "#1a2233"
+                      "color": "#1E2A3A"
                     }
                   }
                 ]
@@ -84,7 +75,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#F0F4FC'"
+                      "Value": "'#EAF6F4'"
                     }
                   }
                 }
@@ -93,7 +84,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "0.0D"
+                  "Value": "0D"
                 }
               }
             }
@@ -115,7 +106,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#9FB3DF'"
+                      "Value": "'#BFE3DC'"
                     }
                   }
                 }
@@ -124,7 +115,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "10.0D"
+                  "Value": "10D"
                 }
               }
             }
@@ -137,28 +128,28 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "6.0D"
+                  "Value": "8D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "6.0D"
+                  "Value": "6D"
                 }
               }
             },
             "left": {
               "expr": {
                 "Literal": {
-                  "Value": "14.0D"
+                  "Value": "214D"
                 }
               }
             },
             "right": {
               "expr": {
                 "Literal": {
-                  "Value": "14.0D"
+                  "Value": "14D"
                 }
               }
             }

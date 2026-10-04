@@ -141,3 +141,18 @@ Số liệu không đổi; bản này sửa cách **diễn đạt** để không
 - Xoá 4 measure của "7. Chất lượng dữ liệu" và 3 bảng không dùng (Cleaning_Log, Quality_Flags, Action_Plan). Nhật ký làm sạch vẫn có trong `Attrition_Clean.xlsx`.
 
 > `scripts/02_build_pbip.py` tạo **bản gốc** (có trang 7 và các bảng trên); thư mục `powerbi/` là **bản Final** đã chỉnh tay và sửa theo 2 vòng rà soát.
+
+## 13. Theme "Navy & Teal" (bản hiện tại)
+Đổi toàn bộ 6 trang theo mẫu thiết kế mới; nội dung, số liệu và vị trí biểu đồ giữ nguyên.
+
+| Thành phần | Thiết kế |
+|---|---|
+| Dải tiêu đề | Navy `#1E3A5F` bo góc, icon teal theo chủ đề từng trang (nhân viên, chân dung, công việc, lương, hài lòng, khiên bảo vệ), ô **GHI CHÚ** màu nằm bên phải dải |
+| Màu biểu đồ tỷ lệ nghỉ | Tự tính theo bộ lọc: **đỏ `#E5484D`** = rất cao (≥ 1,8 lần mức chung) · **teal `#2A9D8F`** = cao hơn mức chung · **xanh nhạt `#9CC9E8`** = thấp hơn |
+| Màu khác | Xanh thép `#3C8DBC` (người ở lại), navy `#1F4E79` (nhấn mạnh), nền trang `#F3F6FA` |
+| Thẻ KPI | Icon teal bên trái, số in đậm (đỏ cho chỉ số nghỉ việc) |
+| Donut trang 1 | Nhãn "237 (16,12%)" và số **16,1%** ở giữa |
+| Ô SO WHAT? | Nền xanh bạc hà, icon bóng đèn, nhãn "SO WHAT?" màu teal và đường kẻ dọc; cao hơn (80px) cho đủ chữ |
+| Ghi chú bộ lọc | "ⓘ Chữ nhận định là số toàn công ty, không đổi theo bộ lọc" ở hàng slicer |
+
+Icon là ảnh PNG trong `StaticResources/RegisteredResources/` (ic_*.png, hd_*.png). Muốn đổi icon: chọn icon trong Power BI → Format → Image → thay ảnh.

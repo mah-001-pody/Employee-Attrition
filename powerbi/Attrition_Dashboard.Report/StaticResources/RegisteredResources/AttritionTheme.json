@@ -1,42 +1,42 @@
 {
-  "name": "Attrition - Navy & Coral",
+  "name": "Attrition - Navy & Teal",
   "dataColors": [
-    "#2E4A8C",
+    "#2A9D8F",
     "#E5484D",
-    "#12A37A",
+    "#3C8DBC",
+    "#1F4E79",
+    "#9CC9E8",
     "#C77700",
-    "#7A5CC6",
-    "#4A9FD8",
-    "#9FB3DF",
-    "#C3CAD8"
+    "#1F6F8B",
+    "#F3A0A3"
   ],
   "background": "#FFFFFF",
-  "foreground": "#1A2233",
-  "tableAccent": "#2E4A8C",
-  "good": "#12A37A",
+  "foreground": "#1E2A3A",
+  "tableAccent": "#2A9D8F",
+  "good": "#2A9D8F",
   "neutral": "#C77700",
   "bad": "#E5484D",
   "maximum": "#E5484D",
   "center": "#F7BDBF",
-  "minimum": "#F3F6FB",
+  "minimum": "#F3F6FA",
   "null": "#E6EAF2",
-  "hyperlink": "#4A6FC4",
+  "hyperlink": "#1F6F8B",
   "visitedHyperlink": "#7A5CC6",
   "textClasses": {
     "callout": {
-      "fontFace": "Segoe UI Semibold",
+      "fontFace": "Segoe UI Bold",
       "fontSize": 22,
-      "color": "#2E4A8C"
+      "color": "#1E2A3A"
     },
     "title": {
       "fontFace": "Segoe UI Semibold",
       "fontSize": 11,
-      "color": "#1A2233"
+      "color": "#1E2A3A"
     },
     "header": {
       "fontFace": "Segoe UI Semibold",
       "fontSize": 10,
-      "color": "#1A2233"
+      "color": "#1E2A3A"
     },
     "label": {
       "fontFace": "Segoe UI",
@@ -51,7 +51,7 @@
           {
             "color": {
               "solid": {
-                "color": "#F1F4F9"
+                "color": "#F3F6FA"
               }
             },
             "transparency": 0
@@ -61,7 +61,7 @@
           {
             "color": {
               "solid": {
-                "color": "#E4E9F2"
+                "color": "#E7ECF3"
               }
             },
             "transparency": 0
@@ -87,10 +87,10 @@
             "show": true,
             "color": {
               "solid": {
-                "color": "#DCE2EE"
+                "color": "#E1E7EF"
               }
             },
-            "radius": 8
+            "radius": 10
           }
         ],
         "dropShadow": [
@@ -98,7 +98,7 @@
             "show": true,
             "color": {
               "solid": {
-                "color": "#1B2A4A"
+                "color": "#1E3A5F"
               }
             },
             "position": "Outer",
@@ -123,7 +123,7 @@
             "show": true,
             "fontColor": {
               "solid": {
-                "color": "#1A2233"
+                "color": "#1E2A3A"
               }
             },
             "fontFamily": "Segoe UI Semibold",
@@ -211,7 +211,7 @@
       "*": {
         "labels": [
           {
-            "fontFamily": "Segoe UI Semibold"
+            "fontFamily": "Segoe UI Bold"
           }
         ],
         "categoryLabels": [
@@ -266,7 +266,7 @@
           {
             "fontColor": {
               "solid": {
-                "color": "#1A2233"
+                "color": "#1E2A3A"
               }
             },
             "fontFamily": "Segoe UI",
@@ -303,7 +303,7 @@
             },
             "backColor": {
               "solid": {
-                "color": "#2E4A8C"
+                "color": "#2A9D8F"
               }
             },
             "fontFamily": "Segoe UI Semibold",
@@ -315,7 +315,7 @@
           {
             "fontColorPrimary": {
               "solid": {
-                "color": "#1A2233"
+                "color": "#1E2A3A"
               }
             },
             "backColorPrimary": {
@@ -325,7 +325,7 @@
             },
             "fontColorSecondary": {
               "solid": {
-                "color": "#1A2233"
+                "color": "#1E2A3A"
               }
             },
             "backColorSecondary": {
@@ -342,7 +342,7 @@
           {
             "fontColor": {
               "solid": {
-                "color": "#1A2233"
+                "color": "#1E2A3A"
               }
             },
             "backColor": {
@@ -382,7 +382,7 @@
             },
             "backColor": {
               "solid": {
-                "color": "#2E4A8C"
+                "color": "#2A9D8F"
               }
             },
             "fontFamily": "Segoe UI Semibold",
@@ -395,7 +395,7 @@
           {
             "fontColor": {
               "solid": {
-                "color": "#1A2233"
+                "color": "#1E2A3A"
               }
             },
             "backColor": {
@@ -412,7 +412,7 @@
           {
             "fontColorPrimary": {
               "solid": {
-                "color": "#1A2233"
+                "color": "#1E2A3A"
               }
             },
             "backColorPrimary": {
@@ -422,7 +422,7 @@
             },
             "fontColorSecondary": {
               "solid": {
-                "color": "#1A2233"
+                "color": "#1E2A3A"
               }
             },
             "backColorSecondary": {
